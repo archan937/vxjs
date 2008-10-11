@@ -7,7 +7,7 @@
 <h2>Animation</h2>
 <a href="javascript:void(0)" id="fadeout">Click here</a> to fade out the following block.<br>
 <a href="javascript:void(0)" id="fadein">Click here</a> to fade in the following block.<br>
-<a href="javascript:void(0)" id="customred">Click here</a> to animate red background-color in the following block.<br>
+<a href="javascript:void(0)" id="customcolor">Click here</a> to animate background-color in the following block.<br>
 <a href="javascript:void(0)" id="customheight">Click here</a> to animate height in the following block.<br>
 <br>
 <div id="fx" style="width: 200px; height: 100px; background-color: rgb(0, 255, 0)"></div>
@@ -47,11 +47,11 @@ vE($("fadeout"), "click", function(){
   vF("out", $("fx"))
 })
 
-vE($("customred"), "click", function(){
-  vA($("fx"),"backgroundColor",0,255,"rgb(",", 255, 0)", 30, 70)
+vE($("customcolor"), "click", function(){
+  vA($("fx"),"backgroundColor",0,255,"rgb(",", 255, 0)", 20, 50)
 })
 
 vE($("customheight"), "click", function(){
-  vA($("fx"),"height",100,50,"","px", 30, 70)
+  vA($("fx"),"height",100,50,"","px", 20, 50)
 })
 </script>
