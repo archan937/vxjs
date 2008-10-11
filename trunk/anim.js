@@ -1,1 +1,1 @@
-function vA(h,p,s,e,r,x,f,i,b){var k=(e-s)/f,s=k,c=setInterval(function(){if((s+=k)<e){h.style[p]=r+s+x}else{clearInterval(c);b?b():b}},i);return c}
+function vA(h,p,s,e,r,x,f,i,b){var k=(e-s)/f,u=0,c=setInterval(function(){if(u++<f){h.style[p]=r+(s+k*u)+x}else{clearInterval(c)};b?b(u,f):b},i);return c}
