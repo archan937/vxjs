@@ -1,0 +1,33 @@
+#summary How to do basic GET/POST Ajax requests with the vX Framework
+
+= Introduction =
+
+Ajax is a very important in a "Web 2.0" world. Sadly, Ajax has been either really hard, or required a huge library to accomplish simple tasks. Here's how to use the super-lightweight vX Framework to do simple GET/POST Ajax requests.
+
+
+= Including the Framework =
+
+Include the vX Ajax function by either referencing the JS file, or by including the tiny snippet of code inline. The code is at http://vxjs.googlecode.com/svn/trunk/ajax.js
+
+== Arguments ==
+
+vX(AJAX URL, CALLBACK FUNCTION[, POST PARAMETERS]);
+
+  * Note that the Callback function is required
+  * POST Parameters are in the form of {{{one=two&three=4&hello=world}}} as a string
+
+== Examples ==
+
+GET:
+{{{
+vX("ajax.php?you=suck&howmuch=alot", function(responsetext){alert(responsetext)})
+}}}
+
+Here, you will do an ajax request to ajax.php with the GET parameters {{{you=suck}}} and {{{howmuch=alot}}}. When the request is complete and sucessful, it will call an anonymous function callback with the contents of the request. That function then calls alert() to display the contents to the user.
+
+POST:
+{{{
+vX("ajax.php", function(responsetext){alert(responsetext)}, "you=suck&howmuch=alot")
+}}}
+
+Here you will do an ajax request to ajax.php with the POST parameters {{{you=suck}}} and {{{howmuch=alot}}}. When the request is complete and sucessful, it will call an anonymous function callback with the contents of the request. That function then calls alert() to display the contents to the user.
