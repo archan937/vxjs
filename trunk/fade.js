@@ -1,1 +1,1 @@
-function vF(d,h,f,i){d=d=="in";vA(h,"opacity",d?0:1,d?1:0,"","",20,100);vA(h,"filter",d?0:100,d?100:0,"alpha(opacity=",")",f?f:20,i?i:100)}
+function vF(d,h,f,i){d=d=="in";vA(h,"opacity",d?0:1,d?1:0,"","",15,50);vA(h,"filter",d?0:100,d?100:0,"alpha(opacity=",")",f?f:15,i?i:50)}
