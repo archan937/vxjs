@@ -1,0 +1,34 @@
+#summary Simple, High-Level Fade In/Out animations
+
+= Introduction =
+
+Fading is probably the most common and most useful effect. It makes sense most people don't like the complexity of the Core Animation function, and want a simpler function.
+
+= Including the Framework =
+
+Include the vX Ajax function by either referencing the JS file, or by including the tiny snippet of code inline. The code is at http://vxjs.googlecode.com/svn/trunk/fade.js
+
+== Arguments ==
+
+Fade In:
+
+vFi(HTML ELEMENT[, FRAMES, INTERVAL]);
+
+  * Frames/interval are optional
+  * Frames is number of frames in animation
+  * Interval is the frame delay
+
+Fade Out:
+
+vFo(HTML ELEMENT[, FRAMES, INTERVAL]);
+
+  * Frames/interval are optional
+  * Frames is number of frames in animation
+  * Interval is the frame delay
+
+== Examples ==
+
+Fade Out Document Body
+{{{
+vFo(document.body)
+}}}
