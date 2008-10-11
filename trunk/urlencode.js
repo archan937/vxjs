@@ -1,1 +1,1 @@
-function vJ(j){var y="",x;for(x in j){y+="&"+x+"="+j[x]};return y.substr(1)}
+function vU(j){var y="",x;for(x in j){y+="&"+x+"="+j[x]};return y.substr(1)}
