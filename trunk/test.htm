@@ -1,0 +1,57 @@
+<h1>vX Tests/Demos</h1>
+
+<h2>Ajax</h2>
+<a href="javascript:void(0)" id="ajax">Click here</a> to find out the size of the vX Javascript Library using vX Ajax.<br>
+<span>Size: </span><span id="vxs">Why dont you try finding out?</span>
+
+<h2>Animation</h2>
+<a href="javascript:void(0)" id="fadeout">Click here</a> to fade out the following block.<br>
+<a href="javascript:void(0)" id="fadein">Click here</a> to fade in the following block.<br>
+<a href="javascript:void(0)" id="customred">Click here</a> to animate red background-color in the following block.<br>
+<a href="javascript:void(0)" id="customheight">Click here</a> to animate height in the following block.<br>
+<br>
+<div id="fx" style="width: 200px; height: 100px; background-color: rgb(0, 255, 0)"></div>
+
+<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript" src="event.js"></script>
+<script type="text/javascript" src="anim.js"></script>
+<script type="text/javascript" src="fade.js"></script>
+<script type="text/javascript" src="urlencode.js"></script>
+<script type="text/javascript">
+function $(e){return document.getElementById(e)}
+
+vE($("ajax"), "click", function(){
+  $("vxs").innerHTML = "Checking...";
+  var count = 0;
+  var files = ["ajax.js","event.js","anim.js","urlencode.js","fade.js"];
+  var done = 0;
+  
+  for(var i = 0; i < files.length; i++){
+    vX(files[i],function(e){
+      count+=e.length;
+      done++;
+      $("vxs").innerHTML = "Checking... "+done+"/"+files.length+"...";
+      if(done >= files.length){
+        $("vxs").innerHTML = (count/1000)+"kb";
+      }
+    })
+  }
+  return false
+})
+
+vE($("fadein"), "click", function(){
+  vF("in", $("fx"))
+})
+
+vE($("fadeout"), "click", function(){
+  vF("out", $("fx"))
+})
+
+vE($("customred"), "click", function(){
+  vA($("fx"),"backgroundColor",0,255,"rgb(",", 255, 0)", 30, 70)
+})
+
+vE($("customheight"), "click", function(){
+  vA($("fx"),"height",100,50,"","px", 30, 70)
+})
+</script>
