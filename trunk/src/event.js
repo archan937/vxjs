@@ -6,6 +6,5 @@ function vE(e,t,f,r){
       e[t+f]=function(){e['e'+t+f](window.event)};
       e.attachEvent('on'+t,e[t+f]);
     }
-  }else
-    r?e.removeEventListener(t,f,false):e.addEventListener(t,f,false);
+  }else r?e.removeEventListener(t,f,false):e.addEventListener(t,f,false);
 }
