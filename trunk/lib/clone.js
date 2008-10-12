@@ -1,0 +1,1 @@
+function vC(j,c){if(c)return eval('('+vS(j)+')');function _(){};_.prototype=j;return new _()}
