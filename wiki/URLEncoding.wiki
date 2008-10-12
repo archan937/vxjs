@@ -8,7 +8,7 @@ In Javascript, it's easier to manipulate JSON objects than URLs, and often data 
 
 = Including the Framework =
 
-Include the vX Ajax function by either referencing the JS file, or by including the tiny snippet of code inline. The code is at http://vxjs.googlecode.com/svn/trunk/urlencode.js
+Include the vX Ajax function by either referencing the JS file, or by including the tiny snippet of code inline. The code is at http://vxjs.googlecode.com/svn/trunk/lib/urlencode.js
 
 == Arguments ==
 
