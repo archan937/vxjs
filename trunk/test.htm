@@ -18,8 +18,10 @@
 <a href="javascript:void(0)" id="fadein">Click here</a> to fade in the following block.<br>
 <a href="javascript:void(0)" id="customcolor">Click here</a> to animate background-color in the following block.<br>
 <a href="javascript:void(0)" id="customheight">Click here</a> to animate height in the following block.<br>
+<a href="javascript:void(0)" id="chain">Click here</a> to animate lots of crap.<br>
 <br>
 <div id="fx" style="width: 200px; height: 100px; background-color: rgb(0, 255, 0)"></div>
+
 
 
 <script type="text/javascript" src="lib/vx.js"></script>
@@ -61,6 +63,23 @@ vE($("customcolor"), "click", function(){
 
 vE($("customheight"), "click", function(){
   vA($("fx"),"height",100,50,"","px", 20, 50)
+})
+
+vE($("chain"), "click", function(){
+  vA($("fx"),"backgroundColor",0,255,"rgb(0, 255, ",")", 30, 50, function(){
+    vF("out", $("fx"))
+    vA($("fx"),"backgroundColor",255,0,"rgb(0, 255, ",")", 35, 50, function(){
+      vF("in", $("fx"))
+      vA($("fx"),"height",100,50,"","px", 20, 50, function(){
+        vA($("fx"),"width",200,50,"","px", 20, 50, function(){
+        
+          vA($("fx"),"height",50,200,"","px", 20, 50)
+          vA($("fx"),"width",50,200,"","px", 20, 50)
+          
+        })
+      })
+    })
+  })
 })
 
 vE($("urlencode"), "click", function(){
