@@ -7,7 +7,7 @@ Ajax is a very important in a "Web 2.0" world. Sadly, Ajax has been either reall
 
 = Including the Framework =
 
-Include the vX Ajax function by either referencing the JS file, or by including the tiny snippet of code inline. The code is at http://vxjs.googlecode.com/svn/trunk/ajax.js
+Include the vX Ajax function by either referencing the JS file, or by including the tiny snippet of code inline. The code is at http://vxjs.googlecode.com/svn/trunk/lib/ajax.js
 
 == Arguments ==
 
