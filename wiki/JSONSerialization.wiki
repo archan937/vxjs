@@ -1,0 +1,34 @@
+#summary Serializing JSON objects
+
+= Introduction =
+
+It is sometimes necessary to send complex data structures to the server in an AJAX call. A JSON object can be serialized before it is sent, and unserialized on the server.
+
+
+
+= Including the Framework =
+
+Include the vX Ajax function by either referencing the JS file, or by including the tiny snippet of code inline. The code is at http://vxjs.googlecode.com/svn/trunk/lib/stringify.js
+
+== Arguments ==
+
+vS(JSON OBJECT);
+
+  * The object is recursively serialized, and escaped if necessary
+
+== Examples ==
+
+Basic stuff.
+{{{
+vS({hello: "world!", recurse: {awesome: "true"}})
+//{hello:'world!',recurse:{awesome:'true'}}
+}}}
+
+JSON Post Example Function
+{{{
+function json_post_stringified(url, data, cbk){
+  vX(url, cbk?cbk:function(){}, vU({json: vS(data)}));
+}
+
+json_post_stringified("ajax.php", {hello: "world!", recurse: {awesome: "true"}})
+}}}
