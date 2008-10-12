@@ -7,7 +7,7 @@ vX has a flexible, extremely lightweight CSS Animation system. Though it's power
 
 = Including the Framework =
 
-Include the vX Ajax function by either referencing the JS file, or by including the tiny snippet of code inline. The code is at http://vxjs.googlecode.com/svn/trunk/anim.js
+Include the vX Ajax function by either referencing the JS file, or by including the tiny snippet of code inline. The code is at http://vxjs.googlecode.com/svn/trunk/lib/anim.js
 
 == Arguments ==
 
