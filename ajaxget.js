@@ -1,0 +1,1 @@
+function vXg(u,f,x){x=(window.ActiveXObject)?new ActiveXObject("Microsoft.XMLHTTP"):new XMLHttpRequest();x.open("GET",u,true);x.onreadystatechange=function(){if(x.readyState==4&&x.status==200) f(x.responseText)};x.send()}
