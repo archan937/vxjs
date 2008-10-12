@@ -1,0 +1,1 @@
+function vA(h,p,s,e,r,x,f,i,b){var k=(e-s)/f,u=0,c=setInterval(function(){if(u++<f){h.style[p]=r+(s+k*u)+x}else{clearInterval(c)};b?b(u/f):b},i);return c}
