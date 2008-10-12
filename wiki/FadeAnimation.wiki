@@ -6,7 +6,7 @@ Fading is probably the most common and most useful effect. It makes sense most p
 
 = Including the Framework =
 
-Include the vX Ajax function by either referencing the JS file, or by including the tiny snippet of code inline. The code is at http://vxjs.googlecode.com/svn/trunk/fade.js
+Include the vX Ajax function by either referencing the JS file, or by including the tiny snippet of code inline. The code is at http://vxjs.googlecode.com/svn/trunk/lib/fade.js
 
 == Arguments ==
 
