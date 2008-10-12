@@ -6,10 +6,12 @@ $header = <<<EOT
 /* vX Super Lightweight Ajax Library */
 EOT;
 $content = '';
-foreach(glob('*.js') as $fn) {
-	if($fn == 'vx.js') continue;
-	$content .= "\n".file_get_contents($fn);
+foreach(glob('src/*.js') as $fn) {
+	$data = file_get_contents($fn);
+	$fn = explode('/',$fn,2);
+	file_put_contents('lib/'.$fn[1],trim(JSMin::minify($data)));
+	$content .= "\n".$data;
 }
-file_put_contents('vx.js',trim($header.JSMin::minify($content)));
+file_put_contents('lib/vx.js',trim($header.JSMin::minify($content)));
 
 ?>
