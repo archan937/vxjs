@@ -1,5 +1,7 @@
 /*[name|Stringify]*/
-_.S=function(j) {
+/*[desc|encodes and decodes JSON]*/
+_.S=function(j,d) {
+	if(d) return eval('('+j+')');
 	if(!j) return j+'';
 	var f = arguments.callee, c = j.constructor+'', t = [];
 	if(c.match(/array/i)) {
