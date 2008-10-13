@@ -33,8 +33,8 @@ foreach(glob('src/vx.*.js') as $fn) {
 	$content .= "\n".$data;
 	if(preg_match('/vx\.([^\.]+)\.js/',$fn[1],$m)) $lib[$m[1]] = array(
 		'name'	=> @$metadata['name']?$metadata['name']:$m[1],
-		'desc'	=> @$metadata['desc']?$metadata['desc']:'',
-		'note'	=> @$metadata['note']?$metadata['note']:'',
+		'desc'	=> @$metadata['desc']?implode(' ',$metadata['desc']):'',
+		'note'	=> @$metadata['note']?implode(' ',$metadata['note']):'',
 		'dep'	=> @$metadata['dep']?explode(',',implode(',',$metadata['dep'])):array()
 	);
 }
