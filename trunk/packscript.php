@@ -44,4 +44,6 @@ $prepared = trim($header.minify($prepared.$content));
 if($prepared != @file_get_contents('lib/vx.all.js')) file_put_contents('lib/vx.all.js',$prepared);
 $prepared = json_encode($lib);
 if($prepared != @file_get_contents('modules.json')) file_put_contents('modules.json',$prepared);
+$prepared = 'var modules='.$prepared;
+if($prepared != @file_get_contents('modules.jsonp')) file_put_contents('modules.jsonp',$prepared);
 ?>
