@@ -12,4 +12,12 @@
 <input type=checkbox  name=json><label for=ns>Stringify</label><br>
 <input type=checkbox  name=clone><label for=ns>Clone</label><br>
 </p>
-<
+<script type="text/javascript" src="lib/vx.all.js"></script>
+<script type="text/javascript">
+_.R(function(){
+  _.X("modules.json",function(json){
+    var modules = _.P(json);
+    console.log(modules);
+  })
+})
+</script>
