@@ -30,7 +30,7 @@
 <script type="text/javascript">
 function $(e){return document.getElementById(e)}
 
-vE($("ajax"), "click", function(){
+_.E($("ajax"), "click", function(){
   $("vxs").innerHTML = "Checking...";
   //you understand I could just do one request to vx.js and get that size. but I dont feel like it.
   var count = 0;
@@ -38,7 +38,7 @@ vE($("ajax"), "click", function(){
   var done = 0;
   
   for(var i = 0; i < files.length; i++){
-    vX("lib/"+files[i],function(e){
+    _.X("lib/"+files[i],function(e){
       count+=e.length;
       done++;
       $("vxs").innerHTML = "Checking... "+done+"/"+files.length+"...";
@@ -50,32 +50,32 @@ vE($("ajax"), "click", function(){
   return false
 })
 
-vE($("fadein"), "click", function(){
-  vF("in", $("fx"))
+_.E($("fadein"), "click", function(){
+  _.F("in", $("fx"))
 })
 
-vE($("fadeout"), "click", function(){
-  vF("out", $("fx"))
+_.E($("fadeout"), "click", function(){
+  _.F("out", $("fx"))
 })
 
-vE($("customcolor"), "click", function(){
-  vA($("fx"),"backgroundColor",0,255,"rgb(",", 255, 0)", 30, 50)
+_.E($("customcolor"), "click", function(){
+  _.A($("fx"),"backgroundColor",0,255,"rgb(",", 255, 0)", 30, 50)
 })
 
-vE($("customheight"), "click", function(){
-  vA($("fx"),"height",100,50,"","px", 20, 50)
+_.E($("customheight"), "click", function(){
+  _.A($("fx"),"height",100,50,"","px", 20, 50)
 })
 
-vE($("chain"), "click", function(){
-  vA($("fx"),"backgroundColor",0,255,"rgb(0, 255, ",")", 30, 50, function(){
-    vF("out", $("fx"))
-    vA($("fx"),"backgroundColor",255,0,"rgb(0, 255, ",")", 35, 50, function(){
-      vF("in", $("fx"))
-      vA($("fx"),"height",100,50,"","px", 20, 50, function(){
-        vA($("fx"),"width",200,50,"","px", 20, 50, function(){
+_.E($("chain"), "click", function(){
+  _.A($("fx"),"backgroundColor",0,255,"rgb(0, 255, ",")", 30, 50, function(){
+    _.F("out", $("fx"))
+    _.A($("fx"),"backgroundColor",255,0,"rgb(0, 255, ",")", 35, 50, function(){
+      _.F("in", $("fx"))
+      _.A($("fx"),"height",100,50,"","px", 20, 50, function(){
+        _.A($("fx"),"width",200,50,"","px", 20, 50, function(){
         
-          vA($("fx"),"height",50,200,"","px", 20, 50)
-          vA($("fx"),"width",50,200,"","px", 20, 50)
+          _.A($("fx"),"height",50,200,"","px", 20, 50)
+          _.A($("fx"),"width",50,200,"","px", 20, 50)
           
         })
       })
@@ -83,15 +83,15 @@ vE($("chain"), "click", function(){
   })
 })
 
-vE($("urlencode"), "click", function(){
-  alert(vU({
+_.E($("urlencode"), "click", function(){
+  alert(_.U({
     you: "suck",
     howmuch: "alot"
   }))
 })
 
-vE($("stringify"), "click", function(){
-  alert(vS({
+_.E($("stringify"), "click", function(){
+  alert(_.S({
     hello: "world!",
     recurse:
       {
@@ -106,10 +106,10 @@ var handler = function(){
   alert("You see this because events are working")
 }
 
-vE($('events'), "click", handler);
-vE($("remevents"), "click", function(){ //on event
+_.E($('events'), "click", handler);
+_.E($("remevents"), "click", function(){ //on event
   alert("Hai! Me Removings Events!");
-  vE($('events'), "click", handler, true); //..remove event
+  _.E($('events'), "click", handler, true); //..remove event
 })
 
 </script>
