@@ -22,7 +22,7 @@ _.R(function(){
     modules = _.P(json);
     for(var x in modules){
       var mod = modules[x];
-      $("selectmodules").innerHTML+='<input id="'+x+'" type=checkbox name='+x+'><label for='+x+' title='+mod.desc.replace(/\'/g,'\\\'')+'>'+mod.name+'</label><br>'
+      $("selectmodules").innerHTML+='<input id="'+x+'" type=checkbox name='+x+'><label for='+x+' title=\''+mod.desc.replace(/\'/g,'\\\'')+'\'>'+mod.name+'</label><br>'
     }
     for(var x in modules){
       _.E($(x), "click", function(){
