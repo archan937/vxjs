@@ -1,5 +1,8 @@
-// depends on vS from stringify.js
-// based on code from http://oranlooney.com/functional-javascript/
+/*[dep|stringify]*/
+/*[name|Clone]*/
+/*[desc|copies or clones an object]*/
+/*[note|a copy is a duplicate of the original; a clone overrides the original]*/
+/*[ref|from http://oranlooney.com/functional-javascript/]*/
 _.C=function(j,c) {
 	// a copy is a duplicate of the original
 	if(c) return eval('('+_.S(j)+')');
