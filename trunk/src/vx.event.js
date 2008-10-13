@@ -1,4 +1,4 @@
-_('').E=function(e,t,f,r){
+_.E=function(e,t,f,r){
   if(e.attachEvent){
     r?e.detachEvent('on'+t,e[t+f]):r;
     if(!r){

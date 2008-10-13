@@ -1,4 +1,4 @@
-_('').Ac=function(v,n,c){
+_.Ac=function(v,n,c){
   var u = 0,
   y = setInterval(function(){
     c(u/v);
@@ -7,7 +7,7 @@ _('').Ac=function(v,n,c){
   return y
 }
 
-_('').A=function(h,p,s,e,r,x,f,i,b){
+_.A=function(h,p,s,e,r,x,f,i,b){
   return _.Ac(f, i, function(a){
     (a==1 && b)?b():0;
     h.style[p]=r+(s+(e-s)*a)+x

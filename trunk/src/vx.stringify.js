@@ -1,4 +1,4 @@
-_('').S=function(j) {
+_.S=function(j) {
 	if(!j) return j==undefined?'undefined':(j===null?'null':j);
 	var f = arguments.callee, c = j.constructor.toString(), t = [];
 	if(c.match(/array/i)) {
