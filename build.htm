@@ -68,11 +68,15 @@ function rebuild(){
   }
   code=(code.length>0)?(($("ns").checked?"":altc)+code):"/*No Modules Selected*/"
   $("build").value = code
+  $("size").innerHTML = "Size: "+code.length+" bytes";
 }
+
+
 </script>
 <input id="ns" type=checkbox name='ns' onclick="rebuild()"><label for='ns'>Namespaces</label>
 <div id="selectmodules">Loading Module List...</div>
 <br>
+<span id="size">Size: 0 bytes</span><br>
 <textarea id="build" style="width: 100%; height: 300px">
 /*No Modules Selected*/
 </textarea>
