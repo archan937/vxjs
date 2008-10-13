@@ -8,6 +8,5 @@ _.S=function(j) {
 		for(x in j) t.push(x+':'+f(j[x]));
 		return '{'+t.join(',')+'}'
 	} if(c.match(/string/i)) return "'"+j.replace(/\'/g,"\\'")+"'";
-
 	return j
 }
