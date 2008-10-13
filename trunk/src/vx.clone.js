@@ -1,4 +1,4 @@
-/*[dep|stringify]*/
+/*[dep|stringify,parse]*/
 /*[name|Clone]*/
 /*[desc|copies or clones an object]*/
 /*[note|a copy is a duplicate of the original; a clone overrides the original]*/
