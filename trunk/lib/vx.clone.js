@@ -1,0 +1,1 @@
+_('').C=function(j,c){if(c)return eval('('+_.S(j)+')');function p(){};p.prototype=j;return new p()}
