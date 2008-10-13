@@ -1,3 +1,4 @@
+/*[name|Animation]*/
 _.Ac=function(v,n,c){
   var u = 0,
   y = setInterval(function(){

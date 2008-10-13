@@ -1,23 +1,72 @@
 <title>Build Your Own vX!</title>
-<script type="text/javascript" src="lib/vx.all.js"></script>
 <h1>Build You Own vX!</h1>
 <p>Customize your vX! Select the packages you want.</p>
-<p>
-<input type=checkbox  checked name=ns><label for=ns>Namespacing</label><br>
-<input type=checkbox  name=ajax><label for=ajax>Ajax</label><br>
-<input type=checkbox  name=anim><label for=ns>Core Animation</label><br>
-<input type=checkbox  name=fade><label for=ns>Fade</label><br>
-<input type=checkbox  name=events><label for=ns>Events</label><br>
-<input type=checkbox  name=urlenc><label for=ns>URL Encode</label><br>
-<input type=checkbox  name=json><label for=ns>Stringify</label><br>
-<input type=checkbox  name=clone><label for=ns>Clone</label><br>
-</p>
+
 <script type="text/javascript" src="lib/vx.all.js"></script>
 <script type="text/javascript">
+function $(e){return document.getElementById(e)}
+
+var selmod = []
+var modsrc = {};
+var modules = {};
+
 _.R(function(){
   _.X("modules.json",function(json){
-    var modules = _.P(json);
-    console.log(modules);
+    $("selectmodules").innerHTML="";
+    modules = _.P(json);
+    for(var x in modules){
+      var mod = modules[x];
+      $("selectmodules").innerHTML+='<input id="'+x+'" type=checkbox name='+x+'><label for='+x+'>'+mod.name+'</label><br>'
+    }
+    for(var x in modules){
+      _.E($(x), "click", function(){
+        checkmods();
+      })
+    }
   })
 })
+
+
+function checkmods(){
+  for(var k in modules){
+    if($(k).checked && selmod.indexOf(k) == -1){ //needs inArray functionality
+      selmod.push(k);
+      for(var y = 0; y < modules[k].dep.length; y++){
+        $(modules[k].dep[y]).checked = true;
+        checkmods();
+      }
+    }
+    if($(k).checked == false && selmod.indexOf(k) != -1){
+      selmod.splice(selmod.indexOf(k),1); //remove from array
+    }
+  }
+  for(var i = 0; i < selmod.length; i++){
+    if(!modsrc[selmod[i]]){
+      loadmod(selmod[i]);
+    }
+  }
+  rebuild();
+}
+
+function loadmod(mod){
+  _.X("lib/vx."+mod+".js", function(e){
+    modsrc[mod] = e;
+    rebuild()
+  })
+}
+
+function rebuild(){
+  var code = "";
+  for(var u = 0; u < selmod.length; u++){
+    code+=modsrc[selmod[u]]+"\n";
+  }
+  code=(code.length>0)?code:"/*No Modules Selected*/"
+  $("build").value = code
+}
 </script>
+
+<div id="selectmodules">Loading Module List...</div>
+<br>
+<textarea id="build" style="width: 100%; height: 300px">
+/*No Modules Selected*/
+</textarea>

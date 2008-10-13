@@ -1,3 +1,4 @@
+/*[name|Stringify]*/
 _.S=function(j) {
 	if(!j) return j+'';
 	var f = arguments.callee, c = j.constructor+'', t = [];
