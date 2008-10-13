@@ -9,6 +9,12 @@ function $(e){return document.getElementById(e)}
 var selmod = []
 var modsrc = {};
 var modules = {};
+var nsc = "";
+var altc = "_=_?_:{}\n";
+
+_.X("lib/vx.js", function(e){
+  nsc = e;
+})
 
 _.R(function(){
   _.X("modules.json",function(json){
@@ -56,15 +62,15 @@ function loadmod(mod){
 }
 
 function rebuild(){
-  var code = "";
+  var code = $("ns").checked?nsc:"";
   for(var u = 0; u < selmod.length; u++){
     code+=modsrc[selmod[u]]+"\n";
   }
-  code=(code.length>0)?code:"/*No Modules Selected*/"
+  code=(code.length>0)?(($("ns").checked?"":altc)+code):"/*No Modules Selected*/"
   $("build").value = code
 }
 </script>
-
+<input id="ns" type=checkbox name='ns' onclick="rebuild()"><label for='ns'>Namespaces</label>
 <div id="selectmodules">Loading Module List...</div>
 <br>
 <textarea id="build" style="width: 100%; height: 300px">
