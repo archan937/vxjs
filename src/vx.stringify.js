@@ -1,6 +1,6 @@
 _.S=function(j) {
-	if(!j) return j==undefined?'undefined':(j===null?'null':j);
-	var f = arguments.callee, c = j.constructor+"", t = [];
+	if(!j) return j+'';
+	var f = arguments.callee, c = j.constructor+'', t = [];
 	if(c.match(/array/i)) {
 		for(x in j) t.push(f(j[x]));
 		return '['+t.join(',')+']'
