@@ -1,5 +1,6 @@
 /*[name|Stringify]*/
 /*[desc|encodes and decodes JSON]*/
+
 _.S=function(j,d) {
 	if(d) return eval('('+j+')');
 	if(!j) return j+'';
