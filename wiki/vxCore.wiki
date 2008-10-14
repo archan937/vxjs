@@ -5,8 +5,20 @@ The vX core package provides a basic toolkit for Web scripting with an emphasis 
 A file containing the full package is available at http://vxjs.googlecode.com/svn/trunk/lib/vx.all.js
 The online build system at http://vxjs.googlecode.com/svn/trunk/build.htm can be used to generate subset packages.
 
+== Query Encode: Query Encoding ==
+The query encoder builds an HTTP query string out of a Javascript object; this simple serialization scheme prepares data for sending to the server.
+=== Usage ===
+`_.Q(obj);`
+  * obj: object to be encoded
+  * _query-encoding is not recursive and does not escape data_
+=== Example ===
+{{{
+_.Q({you: "suck", howmuch: "alot"})
+//"you=suck&howmuch=alot"
+}}}
+
 == Stringify: JSON Encoding ==
-The JSON encoder serializes complex objects into JSON strings suitable for AJAX queries.
+The JSON encoder serializes complex objects into JSON strings suitable for AJAX queries and unserializes JSON strings into objects.
 === Usage ===
 `_.S(data[,decode=false]);`
   * data: the object to be serialized or, in the case of decoding, the string to be unserialized
