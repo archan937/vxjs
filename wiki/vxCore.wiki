@@ -15,9 +15,10 @@ AJAX is a staple of the "Web 2.0" world. vX provides an extremely lightweight mo
 === Example ===
 {{{
 // perform a GET request
-_.X("ajax.php?you=suck&howmuch=alot",function(response){alert(response);});
+_.X("ajax.php?you=suck&howmuch=alot",function(response){alert(response);})
+
 // perform a POST request
-_.X("ajax.php",function(response){alert(response)},"you=suck&howmuch=alot");
+_.X("ajax.php",function(response){alert(response)},"you=suck&howmuch=alot")
 }}}
 
 == Query Encode: Query Encoding ==
@@ -40,9 +41,54 @@ The JSON encoder serializes complex objects into JSON strings suitable for AJAX 
   * decode: true to unserialize the first argument, otherwise to serialize
 === Example ===
 {{{
+// serialize an object
 _.S({hello: "world!", recurse: {awesome: "true", undef: undefined, notfalse: true}})
 //"{hello:'world!',recurse:{awesome:'true',undef:undefined,notfalse:true}}"
 
+// unserialize a string
 _.S("{hello:'world!',recurse:{awesome:'true',undef:undefined,notfalse:true}}",true)
 //{hello:'world!',recurse:{awesome:'true',undef:undefined,notfalse:true}}
+}}}
+
+== HTML Entity: HTML Entity Encoding ==
+When dealing with HTML and XML, it is often necessary to escape some characters into entities. The HTML entity encoder escapes and unescapes strings.
+=== Usage ===
+`_.H(str[,unesc=false]);`
+  * str: the string to be escaped or unescaped
+  * unesc: true to unescape the first argument, otherwise to escape
+  * _the encoder does not escape ampersands in entities, i.e. &amp; to &amp;amp;_
+=== Example ===
+{{{
+// escape a string
+_.H('ham & eggs')
+//"ham &amp; eggs"
+
+// unescape a string
+_.H('ham &amp; eggs',true)
+//"ham & eggs"
+}}}
+
+== Clone: Object Copying and Cloning ==
+A _copy_ of an object is an _independent replica_ of the original. A _clone_ of an object is a "subclass" that _overrides_ the original. The difference between a copy and a clone is that when an object is modified, its copies are unaffected while its clones inherit the changes.
+=== Usage ===
+`_.C(obj[,copy=false]);`
+  * obj: the object to be cloned or copied
+  * copy: true to copy the first argument, otherwise to clone
+=== Example ===
+{{{
+// set up the original object
+var original = {a: 1, b: 2, c: 3}
+// create a clone and override a property
+var clone = _.C(original)
+clone.b = 4
+// create a copy and modify a property
+var copy = _.C(original,true)
+copy.b = 4
+
+// modify the original object
+original.b = 5
+original.c = 6
+original.d = 7
+// copy is {a: 1, b: 4, c: 3}
+// clone is {a: 1, b: 4, c: 6, d: 7}
 }}}
