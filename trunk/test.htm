@@ -34,7 +34,7 @@ _.E($("ajax"), "click", function(){
   $("vxs").innerHTML = "Checking...";
   //you understand I could just do one request to vx.js and get that size. but I dont feel like it.
   var count = 0;
-  var files = ["vx.js","vx.ajax.js","vx.event.js","vx.anim.js","vx.urlencode.js","vx.fade.js","vx.stringify.js","vx.clone.js"];
+  var files = ["vx.js","vx.ajax.js","vx.event.js","vx.anim.js","vx.queryencode.js","vx.fade.js","vx.stringify.js","vx.clone.js"];
   var done = 0;
   
   for(var i = 0; i < files.length; i++){
@@ -84,7 +84,7 @@ _.E($("chain"), "click", function(){
 })
 
 _.E($("urlencode"), "click", function(){
-  alert(_.U({
+  alert(_.Q({
     you: "suck",
     howmuch: "alot"
   }))
