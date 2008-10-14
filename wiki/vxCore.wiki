@@ -92,3 +92,11 @@ original.d = 7
 // copy is {a: 1, b: 4, c: 3}
 // clone is {a: 1, b: 4, c: 6, d: 7}
 }}}
+
+== Event: Event Handling ==
+=== Usage ===
+=== Example ===
+
+== Ready: The Document DOMContentLoaded Event ==
+=== Usage ===
+=== Example ===
