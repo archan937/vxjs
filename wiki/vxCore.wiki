@@ -1,0 +1,21 @@
+#summary The vX Core Package
+
+= Introduction =
+The vX core package provides a basic toolkit for Web scripting with an emphasis on size and speed. The whole of vX, including subordinate packages, resides within the _ (underscore) namespace.
+A file containing the full package is available at http://vxjs.googlecode.com/svn/trunk/lib/vx.all.js
+The online build system at http://vxjs.googlecode.com/svn/trunk/build.htm can be used to generate subset packages.
+
+== Stringify: JSON Encoding ==
+The JSON encoder serializes complex objects into JSON strings suitable for AJAX queries.
+=== Usage ===
+`_.S(data[,decode=false]);`
+  * data: the object to be serialized or, in the case of decoding, the string to be unserialized
+  * decode: true to unserialize the first argument, otherwise to serialize
+=== Example ===
+{{{
+_.S({hello: "world!", recurse: {awesome: "true", undef: undefined, notfalse: true}})
+//"{hello:'world!',recurse:{awesome:'true',undef:undefined,notfalse:true}}"
+
+_.S("{hello:'world!',recurse:{awesome:'true',undef:undefined,notfalse:true}}",true)
+//{hello:'world!',recurse:{awesome:'true',undef:undefined,notfalse:true}}
+}}}
