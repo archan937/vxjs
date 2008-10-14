@@ -1,7 +1,7 @@
 /*[name|Ajax]*/
 
 _.X=function(u,f,p,x){
-  x=(window.ActiveXObject)?new ActiveXObject('Microsoft.XMLHTTP'):new XMLHttpRequest();
+  x=window.ActiveXObject?new ActiveXObject('Microsoft.XMLHTTP'):new XMLHttpRequest();
   x.open(p?'POST':'GET',u,!0);
   p?x.setRequestHeader('Content-type','application/x-www-form-urlencoded'):p;
   x.onreadystatechange=function(){
