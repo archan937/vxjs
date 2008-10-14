@@ -19,7 +19,7 @@ _.X("lib/vx.js", function(e){
 _.R(function(){
   _.X("modules.json",function(json){
     $("selectmodules").innerHTML="";
-    modules = _.P(json);
+    modules = _.S(json,true);
     for(var x in modules){
       var mod = modules[x];
       $("selectmodules").innerHTML+='<input id="'+x+'" type=checkbox name='+x+'><label for='+x+' title=\''+mod.desc.replace(/\'/g,'\\\'')+'\'>'+mod.name+'</label><br>'
