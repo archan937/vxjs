@@ -1,6 +1,6 @@
 /* vX Super Lightweight Ajax Library */
 var _=_||function(n){var r=arguments.callee,p=n.split('.');for(var i=0;i<p.length&&p[i];i++){if(r[p[i]]==undefined)r[p[i]]={};r=r[p[i]]}return r}
-_.X=function(u,f,p,x){x=(window.ActiveXObject)?new ActiveXObject("Microsoft.XMLHTTP"):new XMLHttpRequest();x.open(p?"POST":"GET",u,true);p?x.setRequestHeader("Content-type","application/x-www-form-urlencoded"):p;x.onreadystatechange=function(){if(x.readyState==4&&x.status==200)f?f(x.responseText,x):f};x.send(p)}
+_.X=function(u,f,p,x){x=(window.ActiveXObject)?new ActiveXObject("Microsoft.XMLHTTP"):new XMLHttpRequest();x.open(p?"POST":"GET",u,true);p?x.setRequestHeader("Content-type","application/x-www-form-urlencoded"):p;x.onreadystatechange=function(){x.readyState==4&&f?(f(x.responseText,x)):0};x.send(p)}
 _.Ac=function(v,n,c){var u=0,y=setInterval(function(){c(u/v);if(u++>=v)clearInterval(y)},n);return y}
 _.A=function(h,p,s,e,r,x,f,i,b){return _.Ac(f,i,function(a){(a==1&&b)?b():0;h.style[p]=r+(s+(e-s)*a)+x})}
 _.C=function(j,c){if(c)return _.S(_.S(j),true);function p(){};p.prototype=j;return new p()}
