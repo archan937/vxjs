@@ -5,7 +5,7 @@ _.X=function(u,f,p,x){
   x.open(p?"POST":"GET",u,true);
   p?x.setRequestHeader("Content-type","application/x-www-form-urlencoded"):p;
   x.onreadystatechange=function(){
-    x.readyState==4&&f?(f(x.responseText,x)):0
+    x.readyState==4?f?f(x.responseText,x):f:0
   };
   x.send(p)
 }
