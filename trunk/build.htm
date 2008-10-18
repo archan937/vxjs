@@ -62,9 +62,14 @@ function loadmod(mod){
 
 function rebuild(){
   var code = _.G("ns").checked?nsc:"";
+  var mods = [];
+  
   for(var u = 0; u < selmod.length; u++){
-    code+=modsrc[selmod[u]]+"\n";
+    mods.push(modsrc[selmod[u]])
   }
+  
+  code += mods.join("\n");
+  
   code=(code.length>0)?((_.G("ns").checked?"":altc)+code):"/*No Modules Selected*/"
   _.G("build").value = code
   _.G("size").innerHTML = "Size: "+code.length+" bytes";
