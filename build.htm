@@ -4,7 +4,6 @@
 
 <script type="text/javascript" src="lib/vx.all.js"></script>
 <script type="text/javascript">
-function $(e){return document.getElementById(e)}
 
 var selmod = []
 var modsrc = {};
@@ -18,14 +17,14 @@ _.X("lib/vx.js", function(e){
 
 _.R(function(){
   _.X("modules.json",function(json){
-    $("selectmodules").innerHTML="";
+    _.G("selectmodules").innerHTML="";
     modules = _.S(json,true);
     for(var x in modules){
       var mod = modules[x];
-      $("selectmodules").innerHTML+='<input id="'+x+'" type=checkbox name='+x+'><label for='+x+' title=\''+mod.desc.replace(/\'/g,'\\\'')+'\'>'+mod.name+'</label><br>'
+      _.G("selectmodules").innerHTML+='<input id="'+x+'" type=checkbox name='+x+'><label for='+x+' title=\''+mod.desc.replace(/\'/g,'\\\'')+'\'>'+mod.name+'</label><br>'
     }
     for(var x in modules){
-      _.E($(x), "click", function(){
+      _.E(_.G(x), "click", function(){
         checkmods();
       })
     }
@@ -35,14 +34,14 @@ _.R(function(){
 
 function checkmods(){
   for(var k in modules){
-    if($(k).checked && selmod.indexOf(k) == -1){ //needs inArray functionality
+    if(_.G(k).checked && selmod.indexOf(k) == -1){ //needs inArray functionality
       selmod.push(k);
       for(var y = 0; y < modules[k].dep.length; y++){
-        $(modules[k].dep[y]).checked = true;
+        _.G(modules[k].dep[y]).checked = true;
         checkmods();
       }
     }
-    if($(k).checked == false && selmod.indexOf(k) != -1){
+    if(_.G(k).checked == false && selmod.indexOf(k) != -1){
       selmod.splice(selmod.indexOf(k),1); //remove from array
     }
   }
@@ -62,13 +61,13 @@ function loadmod(mod){
 }
 
 function rebuild(){
-  var code = $("ns").checked?nsc:"";
+  var code = _.G("ns").checked?nsc:"";
   for(var u = 0; u < selmod.length; u++){
     code+=modsrc[selmod[u]]+"\n";
   }
-  code=(code.length>0)?(($("ns").checked?"":altc)+code):"/*No Modules Selected*/"
-  $("build").value = code
-  $("size").innerHTML = "Size: "+code.length+" bytes";
+  code=(code.length>0)?((_.G("ns").checked?"":altc)+code):"/*No Modules Selected*/"
+  _.G("build").value = code
+  _.G("size").innerHTML = "Size: "+code.length+" bytes";
 }
 
 
