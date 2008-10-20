@@ -8,12 +8,8 @@
 var selmod = []
 var modsrc = {};
 var modules = {};
-var nsc = "";
 var altc = "var _=_?_:{}\n";
 
-_.X("lib/vx.js", function(e){
-  nsc = e+"\n";
-})
 
 _.R(function(){
   _.X("modules.json",function(json){
@@ -61,7 +57,7 @@ function loadmod(mod){
 }
 
 function rebuild(){
-  var code = _.G("ns").checked?nsc:"";
+  var code = "";
   var mods = [];
   
   for(var u = 0; u < selmod.length; u++){
@@ -70,14 +66,13 @@ function rebuild(){
   
   code += mods.join("\n");
   
-  code=(code.length>0)?((_.G("ns").checked?"":altc)+code):"/*No Modules Selected*/"
+  code=(code.length>0)?(altc+code):"/*No Modules Selected*/"
   _.G("build").value = code
   _.G("size").innerHTML = "Size: "+code.length+" bytes";
 }
 
 
 </script>
-<input id="ns" type=checkbox name='ns' onclick="rebuild()"><label for='ns'>Namespaces</label>
 <div id="selectmodules">Loading Module List...</div>
 <br>
 <span id="size">Size: 23 bytes</span><br>

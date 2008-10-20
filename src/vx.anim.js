@@ -1,11 +1,11 @@
 /*[name|Animation]*/
-_.Ac=function(v,n,c){
-  var u = 0,
-  y = setInterval(function(){
+_.Ac=function(v,n,c,u,y){
+  u = 0
+  return y = setInterval(function(){
     c(u/v);
-    if(u++ >= v) clearInterval(y)
+    //if(u++ >= v) clearInterval(y)
+    u++>=v?clearInterval(y):0
   },n);
-  return y
 }
 
 _.A=function(h,p,s,e,r,x,f,i,b){
