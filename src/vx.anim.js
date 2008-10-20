@@ -1,6 +1,6 @@
 /*[name|Animation]*/
 _.Ac=function(v,n,c,u,y){
-  u = 0
+  u = 0;
   return y = setInterval(function(){
     c(u/v);
     //if(u++ >= v) clearInterval(y)
