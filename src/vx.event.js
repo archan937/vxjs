@@ -1,8 +1,8 @@
 /*[name|Events]*/
 _.E=function(e,t,f,r){
   if(e.attachEvent){
-    r?e.detachEvent('on'+t,e[t+f]):r;
-    if(!r){
+    //r?e.detachEvent('on'+t,e[t+f]):!0; //if no r then return true
+    if(r?e.detachEvent('on'+t,e[t+f]):!0){ //should return true and fire if no r, detach if r
       e['e'+t+f]=f;
       e[t+f]=function(){e['e'+t+f](window.event)};
       e.attachEvent('on'+t,e[t+f]);
