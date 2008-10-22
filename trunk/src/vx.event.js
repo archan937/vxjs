@@ -29,6 +29,20 @@ _.E=function(e,t,f,r){
 }
 
 
+
+/*[name|Events]*/
+
+_.E=function(e,t,f,r){
+  if(e.attachEvent){
+    if(!r){
+      e['e'+t+f]=f;
+      e[t+f]=function(){e['e'+t+f](window.event)};
+    }
+    r?e.detachEvent('on'+t,e[t+f]):e.attachEvent('on'+t,e[t+f]);
+  }else r?e.removeEventListener(t,f,!1):e.addEventListener(t,f,!1);
+}
+
+
 /*[name|Events]*/
 
 _.E=function(e,t,f,r){
@@ -63,6 +77,29 @@ _.E=function(e,t,f,r){
   }else r?e.removeEventListener(t,f,!1):e.addEventListener(t,f,!1);
 }
 
+
+/*[name|Events]*/
+
+_.E=function(e,t,f,r){
+  if(e.attachEvent){
+    r?0:e['e'+t+f]=f;
+    r?0:e[t+f]=function(){e['e'+t+f](window.event)};
+    r?e.detachEvent('on'+t,e[t+f]):e.attachEvent('on'+t,e[t+f]);
+  }else (r?e.removeEventListener:e.addEventListener)(t,f,!1);
+}
+
+
+/*[name|Events]*/
+
+_.E=function(e,t,f,r){
+  if(e.attachEvent){
+    if(!r){
+      e['e'+t+f]=f;
+      e[t+f]=function(){e['e'+t+f](window.event)};
+    }
+    r?e.detachEvent('on'+t,e[t+f]):e.attachEvent('on'+t,e[t+f]);
+  }else r?e.removeEventListener(t,f,!1):e.addEventListener(t,f,!1);
+}
 
 
 (r?e.removeEventListener:e.addEventListener)(t,f,!1);
