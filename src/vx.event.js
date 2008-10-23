@@ -1,105 +1,27 @@
 /*[name|Events]*/
-_.E=function(e,t,f,r){
-  if(e.attachEvent){
-    e['e'+t+f]=f;
-    e[t+f]=function(){e['e'+t+f](window.event)};
-    r?e.detachEvent('on'+t,e[t+f]):e.attachEvent('on'+t,e[t+f]);
-  }else r?e.removeEventListener(t,f,!1):e.addEventListener(t,f,!1);
-}
 
-
-/*[name|Events]*/
-_.E=function(e,t,f,r){
-  if(e.attachEvent && r?e.detachEvent('on'+t,e[t+f]):!0){
-    e['e'+t+f]=f;
-    e[t+f]=function(){e['e'+t+f](window.event)};
-    e.attachEvent('on'+t,e[t+f]);
-  }else r?e.removeEventListener(t,f,!1):e.addEventListener(t,f,!1);
-}
-
-
-/*[name|Events]*/
-
-_.E=function(e,t,f,r){
-  if(e.attachEvent){
-    e['e'+t+f]=f;
-    e[t+f]=function(){e['e'+t+f](window.event)};
-    r?e.detachEvent('on'+t,e[t+f]):e.attachEvent('on'+t,e[t+f]);
-  }else r?e.removeEventListener(t,f,!1):e.addEventListener(t,f,!1);
-}
-
-
-
-/*[name|Events]*/
-
-_.E=function(e,t,f,r){
-  if(e.attachEvent){
-    if(!r){
+_.E=function(e, //Element
+              t, //Type (Event)
+              f, //Function (Callback)
+              r  //Remove? (default false)
+              ){ //start function
+  if( //start if thing
+    e.attachEvent? //if attach event
+    ( //if attach event
+      r? //if remove
+      e.detachEvent('on'+t,e[t+f]): //remove
+      !0 //tell to run add event
+    ): //else (no attach event)
+    ( //if no attachEvent
+    r? //remove?
+      e.removeEventListener(t,f,!1): //if yes, then remove (standards)
+      e.addEventListener(t,f,!1) //if no, then add (standards)
+    ) //end if no attachEvent
+   //end if
+  ){ //start add event (IE)
       e['e'+t+f]=f;
       e[t+f]=function(){e['e'+t+f](window.event)};
-    }
-    r?e.detachEvent('on'+t,e[t+f]):e.attachEvent('on'+t,e[t+f]);
-  }else r?e.removeEventListener(t,f,!1):e.addEventListener(t,f,!1);
-}
-
-
-/*[name|Events]*/
-
-_.E=function(e,t,f,r){
-  if(e.attachEvent){
-    r?0:e['e'+t+f]=f;
-    r?0:e[t+f]=function(){e['e'+t+f](window.event)};
-    r?e.detachEvent('on'+t,e[t+f]):e.attachEvent('on'+t,e[t+f]);
-  }else r?e.removeEventListener(t,f,!1):e.addEventListener(t,f,!1);
-}
-
-/*[name|Events]*/
-_.E=function(e,t,f,r){
-  if(e.attachEvent){
-    //r?e.detachEvent('on'+t,e[t+f]):!0; //if no r then return true
-    if(r?e.detachEvent('on'+t,e[t+f]):!0){ //should return true and fire if no r, detach if r
-      e['e'+t+f]=f;
-      e[t+f]=function(){e['e'+t+f](window.event)};
-      e.attachEvent('on'+t,e[t+f]);
-    }
-  }else r?e.removeEventListener(t,f,!1):e.addEventListener(t,f,!1);
-         r?(e.removeEventListener:e.addEventListener)(t,f,!1);
-}
-
-
-_.E=function(e,t,f,r){
-  if(e.attachEvent){
-    if(r?e.detachEvent('on'+t,e[t+f]):!0){
-      e['e'+t+f]=f;
-      e[t+f]=function(){e['e'+t+f](window.event)};
-      e.attachEvent('on'+t,e[t+f]);
-    }
-  }else r?e.removeEventListener(t,f,!1):e.addEventListener(t,f,!1);
-}
-
-
-/*[name|Events]*/
-
-_.E=function(e,t,f,r){
-  if(e.attachEvent){
-    r?0:e['e'+t+f]=f;
-    r?0:e[t+f]=function(){e['e'+t+f](window.event)};
-    r?e.detachEvent('on'+t,e[t+f]):e.attachEvent('on'+t,e[t+f]);
-  }else (r?e.removeEventListener:e.addEventListener)(t,f,!1);
-}
-
-
-/*[name|Events]*/
-
-_.E=function(e,t,f,r){
-  if(e.attachEvent){
-    if(!r){
-      e['e'+t+f]=f;
-      e[t+f]=function(){e['e'+t+f](window.event)};
-    }
-    r?e.detachEvent('on'+t,e[t+f]):e.attachEvent('on'+t,e[t+f]);
-  }else r?e.removeEventListener(t,f,!1):e.addEventListener(t,f,!1);
-}
-
-
-(r?e.removeEventListener:e.addEventListener)(t,f,!1);
+      e.attachEvent('on'+t,e[t+f])
+  } //end add event (IE)
+} //end function
+//end vxEvents
