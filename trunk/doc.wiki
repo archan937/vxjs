@@ -92,7 +92,7 @@ _.H('ham &amp; eggs',true)
 //"ham & eggs"
 }}}
 
-== Array IndexOf:  ==
+== Index: Array IndexOf ==
 
 === Usage ===
 
@@ -118,7 +118,7 @@ _.Q({you: "suck", howmuch: "alot"})
 //"you=suck&howmuch=alot"
 }}}
 
-== Document onReady:  ==
+== Ready: Document onReady ==
 
 === Usage ===
 
