@@ -5,7 +5,7 @@ The vX core package provides a basic toolkit for Web scripting with an emphasis 
 A file containing the full package is available at http://vxjs.googlecode.com/svn/trunk/lib/vx.all.js
 The online build system at http://vxjs.googlecode.com/svn/trunk/build.htm can be used to generate subset packages.
 
-== AJAX: AJAX Query ==
+== Ajax: AJAX Query ==
 AJAX is a staple of the "Web 2.0" world. vX provides an extremely lightweight module to perform simple asynchronous GET/POST requests.
 === Usage ===
 `_.X(url,callback[,query]);`
@@ -21,52 +21,12 @@ _.X("ajax.php?you=suck&howmuch=alot",function(response){alert(response);})
 _.X("ajax.php",function(response){alert(response)},"you=suck&howmuch=alot")
 }}}
 
-== Query Encode: Query Encoding ==
-The query encoder builds an HTTP query string out of a Javascript object; this simple serialization scheme prepares data for sending to the server.
+== Animation: Basic Animation ==
+
 === Usage ===
-`_.Q(obj);`
-  * obj: object to be encoded
-  * _query-encoding is not recursive and does not escape data_
+
 === Example ===
-{{{
-_.Q({you: "suck", howmuch: "alot"})
-//"you=suck&howmuch=alot"
-}}}
 
-== Stringify: JSON Encoding ==
-The JSON encoder serializes complex objects into JSON strings suitable for AJAX queries and unserializes JSON strings into objects.
-=== Usage ===
-`_.S(data[,decode=false]);`
-  * data: the object to be serialized or, in the case of decoding, the string to be unserialized
-  * decode: true to unserialize the first argument, otherwise to serialize
-=== Example ===
-{{{
-// serialize an object
-_.S({hello: "world!", recurse: {awesome: "true", undef: undefined, notfalse: true}})
-//"{hello:'world!',recurse:{awesome:'true',undef:undefined,notfalse:true}}"
-
-// unserialize a string
-_.S("{hello:'world!',recurse:{awesome:'true',undef:undefined,notfalse:true}}",true)
-//{hello:'world!',recurse:{awesome:'true',undef:undefined,notfalse:true}}
-}}}
-
-== HTML Entity: HTML Entity Encoding ==
-When dealing with HTML and XML, it is often necessary to convert troublesome characters into entities. The HTML entity encoder escapes and unescapes strings.
-=== Usage ===
-`_.H(str[,unesc=false]);`
-  * str: the string to be escaped or unescaped
-  * unesc: true to unescape the first argument, otherwise to escape
-  * _the encoder does not escape ampersands in entities, i.e. &amp; to &amp;amp;_
-=== Example ===
-{{{
-// escape a string
-_.H('ham & eggs')
-//"ham &amp; eggs"
-
-// unescape a string
-_.H('ham &amp; eggs',true)
-//"ham & eggs"
-}}}
 
 == Clone: Object Copying and Cloning ==
 A _copy_ of an object is an _independent replica_ of the original. A _clone_ of an object is a "subclass" that _overrides_ the original. The difference between a copy and a clone is that when an object is modified, its copies are unaffected while its clones inherit the changes.
@@ -93,10 +53,98 @@ original.d = 7
 // clone is {a: 1, b: 4, c: 6, d: 7}
 }}}
 
-== Event: Event Handling ==
+== Events: Event Handling ==
+
 === Usage ===
+
 === Example ===
 
-== Ready: The Document DOMContentLoaded Event ==
+
+== Extend Object: Object Merging ==
+
 === Usage ===
+
 === Example ===
+
+
+== Fade: Simple Fade Animation ==
+
+=== Usage ===
+
+=== Example ===
+
+
+== Get Element: Get Element By ID ==
+
+=== Usage ===
+
+=== Example ===
+
+
+== HTML Entity: HTML Entity Encoding ==
+When dealing with HTML and XML, it is often necessary to convert troublesome characters into entities. The HTML entity encoder escapes and unescapes strings.
+=== Usage ===
+`_.H(str[,unesc=false]);`
+  * str: the string to be escaped or unescaped
+  * unesc: true to unescape the first argument, otherwise to escape
+  * _the encoder does not escape ampersands in entities, i.e. &amp; to &amp;amp;_
+=== Example ===
+{{{
+// escape a string
+_.H('ham & eggs')
+//"ham &amp; eggs"
+
+// unescape a string
+_.H('ham &amp; eggs',true)
+//"ham & eggs"
+}}}
+
+== Index: Array IndexOf ==
+
+=== Usage ===
+
+=== Example ===
+
+
+== Namespacing: Namespace Generation ==
+
+=== Usage ===
+
+=== Example ===
+
+
+== Query Encode: Query Encoding ==
+The query encoder builds an HTTP query string out of a Javascript object; this simple serialization scheme prepares data for sending to the server.
+=== Usage ===
+`_.Q(obj);`
+  * obj: object to be encoded
+  * _query-encoding is not recursive and does not escape data_
+=== Example ===
+{{{
+_.Q({you: "suck", howmuch: "alot"})
+//"you=suck&howmuch=alot"
+}}}
+
+== Ready: Document onReady ==
+
+=== Usage ===
+
+=== Example ===
+
+
+== Stringify: JSON Encoding ==
+The JSON encoder serializes complex objects into JSON strings suitable for AJAX queries and unserializes JSON strings into objects.
+=== Usage ===
+`_.S(data[,decode=false]);`
+  * data: the object to be serialized or, in the case of decoding, the string to be unserialized
+  * decode: true to unserialize the first argument, otherwise to serialize
+=== Example ===
+{{{
+// serialize an object
+_.S({hello: "world!", recurse: {awesome: "true", undef: undefined, notfalse: true}})
+//"{hello:'world!',recurse:{awesome:'true',undef:undefined,notfalse:true}}"
+
+// unserialize a string
+_.S("{hello:'world!',recurse:{awesome:'true',undef:undefined,notfalse:true}}",true)
+//{hello:'world!',recurse:{awesome:'true',undef:undefined,notfalse:true}}
+}}}
