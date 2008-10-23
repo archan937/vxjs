@@ -12,7 +12,7 @@ function minify($s) {
 }
 
 function parsemeta($s) {
-	if(!preg_match_all('/\/\*\[([^\|]+)\|([^\]]+)\]\*\//',$s,$matches,PREG_SET_ORDER)) return array();
+	if(!preg_match_all('/\/\*\[([^\|]+)\|(.+?)\]\*\//s',$s,$matches,PREG_SET_ORDER)) return array();
 	$ret = array();
 	foreach($matches as $m) {
 		$k = trim(strtolower($m[1]));
@@ -39,7 +39,7 @@ foreach(glob('src/vx.*.js') as $fn) {
 		'note'	=> @$metadata['note']?implode('. ',$metadata['note']):'',
 		'dep'	=> @$metadata['dep']?explode(',',implode(',',$metadata['dep'])):array()
 	);
-	$doc .= '== '.trim(@$metadata['name'][0]?$metadata['name'][0]:$modname).': '.trim(@$metadata['desc']?implode("\n",$metadata['desc']):'').' =='."\n".'=== Usage ==='."\n".trim(@$metadata['usage']?implode("\n",$metadata['usage']):'')."\n".'=== Example ==='."\n".trim(@$metadata['summary']?implode("\n",$metadata['summary']):'')."\n\n";
+	$doc .= '== '.trim(@$metadata['name'][0]?$metadata['name'][0]:$modname).': '.trim(@$metadata['desc']?implode("\n",$metadata['desc']):'').' =='."\n".trim(@$metadata['summary']?implode("\n",$metadata['summary']):'')."\n".'=== Usage ==='."\n".trim(@$metadata['usage']?implode("\n",$metadata['usage']):'')."\n".'=== Example ==='."\n".trim(@$metadata['example']?implode("\n",$metadata['example']):'')."\n\n";
 }
 $prepared = minify(@file_get_contents('src/vx.js'));
 if($prepared != @file_get_contents('lib/vx.js')) file_put_contents('lib/vx.js',$prepared);
