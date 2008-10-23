@@ -1,5 +1,6 @@
 /*[dep|event]*/
-/*[name|Document onReady]*/
+/*[name|Ready]*/
+/*[desc|Document onReady]*/
 
 _.R=function(f){
   /(?!.*?ati|.*?kit)^moz|ope/i.test(navigator.userAgent)?
@@ -7,7 +8,6 @@ _.R=function(f){
     setTimeout(f,0)
 }
 
-/*[desc|]*/
 /*[summary|]*/
 /*[usage|
 
