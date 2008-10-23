@@ -102,9 +102,18 @@ _.H('ham &amp; eggs',true)
 == Index: Array IndexOf ==
 
 === Usage ===
-
+`_.I(obj, array);`
+  * obj: object to search for
+  * array: the array to search in
+  * Note that it only gets the first occurance and ignores the following
 === Example ===
-
+{{{
+_.I("ham", ["bacon", "trees", "cows", "nuclear-pests"]);
+//-1
+var breakfast = ["bacon", "ham", "eggs", "javascript"]
+_.I("ham", breakfast);
+//1
+}}}
 
 == Namespacing: Namespace Generation ==
 
@@ -126,9 +135,10 @@ _.Q({you: "suck", howmuch: "alot"})
 }}}
 
 == Ready: Document onReady ==
-
+Many people use Window.onLoad to execute their scripts after the page has loaded. But, there is only 1 window.onload function you can set, and it happens after the images and etc are loaded. Document onReady allows you to execute javascript immediately when the document is ready for manipulation, before images are loaded and you can use it with multiple functions.
 === Usage ===
-
+`_.R(function);`
+  * function: A javascript function to execute after the DOM is ready for manipulation
 === Example ===
 
 
