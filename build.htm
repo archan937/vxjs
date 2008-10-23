@@ -30,15 +30,15 @@ _.R(function(){
 
 function checkmods(){
   for(var k in modules){
-    if(_.G(k).checked && selmod.indexOf(k) == -1){ //needs inArray functionality
+    if(_.G(k).checked && _.I(k,selmod) == -1){ //needs inArray functionality
       selmod.push(k);
       for(var y = 0; y < modules[k].dep.length; y++){
         _.G(modules[k].dep[y]).checked = true;
         checkmods();
       }
     }
-    if(_.G(k).checked == false && selmod.indexOf(k) != -1){
-      selmod.splice(selmod.indexOf(k),1); //remove from array
+    if(_.G(k).checked == false && _.I(k,selmod) != -1){
+      selmod.splice(_.I(k,selmod),1); //remove from array
     }
   }
   for(var i = 0; i < selmod.length; i++){
