@@ -4,7 +4,6 @@
 The vX core package provides a basic toolkit for Web scripting with an emphasis on size and speed. The whole of vX, including subordinate packages, resides within the `_` (underscore) namespace.
 A file containing the full package is available at http://vxjs.googlecode.com/svn/trunk/lib/vx.all.js
 The online build system at http://vxjs.googlecode.com/svn/trunk/build.htm can be used to generate subset packages.
-
 == Ajax: AJAX Query ==
 AJAX is a staple of the "Web 2.0" world. vX provides an extremely lightweight module to perform simple asynchronous GET/POST requests.
 === Usage ===
@@ -68,11 +67,18 @@ original.d = 7
 
 
 == Fade: Simple Fade Animation ==
-
+Fading is probably the most common and most useful effect. It makes sense most people don't like the complexity of the Core Animation function, and want a simpler function.
 === Usage ===
+vF(DIRECTION IN/OUT, HTML ELEMENT[, FRAMES, INTERVAL]);
 
+  * Direction is lowercase, either "in" or "out"
+  * Frames/interval are optional
+  * Frames is number of frames in animation
+  * Interval is the frame delay
 === Example ===
-
+{{{
+vF("out",document.body)
+}}}
 
 == Get Element: Get Element By ID ==
 
@@ -140,7 +146,12 @@ Many people use Window.onLoad to execute their scripts after the page has loaded
 `_.R(function);`
   * function: A javascript function to execute after the DOM is ready for manipulation
 === Example ===
-
+{{{
+_.R(function(){
+  alert("this will execute before the page is fully loaded, but after DOM can be manipulated");
+  //manipulate DOM
+})
+}}}
 
 == Stringify: JSON Encoding ==
 The JSON encoder serializes complex objects into JSON strings suitable for AJAX queries and unserializes JSON strings into objects.
