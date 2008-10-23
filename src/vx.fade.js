@@ -8,10 +8,17 @@ _.F=function(d,h,f,i){
   _.A(h,'filter',d?0:100,d?100:0,'alpha(opacity=',')',f?f:15,i?i:50) //ie
 }
 
-/*[summary|]*/
+/*[summary|Fading is probably the most common and most useful effect. It makes sense most people don't like the complexity of the Core Animation function, and want a simpler function.]*/
 /*[usage|
+vF(DIRECTION IN/OUT, HTML ELEMENT[, FRAMES, INTERVAL]);
 
+  * Direction is lowercase, either "in" or "out"
+  * Frames/interval are optional
+  * Frames is number of frames in animation
+  * Interval is the frame delay
 ]*/
 /*[example|
-
+{{{
+vF("out",document.body)
+}}}
 ]*/
