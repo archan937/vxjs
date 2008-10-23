@@ -61,11 +61,18 @@ original.d = 7
 
 
 == Fade: Simple Fade Animation ==
-
+Fading is probably the most common and most useful effect. It makes sense most people don't like the complexity of the Core Animation function, and want a simpler function.
 === Usage ===
+vF(DIRECTION IN/OUT, HTML ELEMENT[, FRAMES, INTERVAL]);
 
+  * Direction is lowercase, either "in" or "out"
+  * Frames/interval are optional
+  * Frames is number of frames in animation
+  * Interval is the frame delay
 === Example ===
-
+{{{
+vF("out",document.body)
+}}}
 
 == Get Element: Get Element By ID ==
 
@@ -95,9 +102,18 @@ _.H('ham &amp; eggs',true)
 == Index: Array IndexOf ==
 
 === Usage ===
-
+`_.I(obj, array);`
+  * obj: object to search for
+  * array: the array to search in
+  * Note that it only gets the first occurance and ignores the following
 === Example ===
-
+{{{
+_.I("ham", ["bacon", "trees", "cows", "nuclear-pests"]);
+//-1
+var breakfast = ["bacon", "ham", "eggs", "javascript"]
+_.I("ham", breakfast);
+//1
+}}}
 
 == Namespacing: Namespace Generation ==
 
@@ -119,11 +135,17 @@ _.Q({you: "suck", howmuch: "alot"})
 }}}
 
 == Ready: Document onReady ==
-
+Many people use Window.onLoad to execute their scripts after the page has loaded. But, there is only 1 window.onload function you can set, and it happens after the images and etc are loaded. Document onReady allows you to execute javascript immediately when the document is ready for manipulation, before images are loaded and you can use it with multiple functions.
 === Usage ===
-
+`_.R(function);`
+  * function: A javascript function to execute after the DOM is ready for manipulation
 === Example ===
-
+{{{
+_.R(function(){
+  alert("this will execute before the page is fully loaded, but after DOM can be manipulated");
+  //manipulate DOM
+})
+}}}
 
 == Stringify: JSON Encoding ==
 The JSON encoder serializes complex objects into JSON strings suitable for AJAX queries and unserializes JSON strings into objects.

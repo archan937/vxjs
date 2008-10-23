@@ -14,6 +14,11 @@ _.R=function(f){
   * function: A javascript function to execute after the DOM is ready for manipulation
 ]*/
 /*[example|
-
+{{{
+_.R(function(){
+  alert("this will execute before the page is fully loaded, but after DOM can be manipulated");
+  //manipulate DOM
+})
+}}}
 ]*/
 /*[ref|based on http://muffinresearch.co.uk/archives/2008/02/15/does-settimeout-solve-the-domcontentloaded-problem/]*/
