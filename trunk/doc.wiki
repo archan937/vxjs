@@ -1,0 +1,98 @@
+== Ajax: AJAX Query ==
+AJAX is a staple of the "Web 2.0" world. vX provides an extremely lightweight module to perform simple asynchronous GET/POST requests.
+=== Usage ===
+`_.X(url,callback[,query]);`
+  * url: the URL to query
+  * callback: function that is called when the query returns
+  * query: query string, sets POST mode when specified
+=== Example ===
+{{{
+// perform a GET request
+_.X("ajax.php?you=suck&howmuch=alot",function(response){alert(response);})
+
+// perform a POST request
+_.X("ajax.php",function(response){alert(response)},"you=suck&howmuch=alot")
+}}}
+
+== Animation:  ==
+
+=== Usage ===
+
+=== Example ===
+
+
+== Clone: copies or clones an object ==
+
+=== Usage ===
+
+=== Example ===
+
+
+== Events:  ==
+
+=== Usage ===
+
+=== Example ===
+
+
+== Extend Object:  ==
+
+=== Usage ===
+
+=== Example ===
+
+
+== Fade: simple fade animation ==
+
+=== Usage ===
+
+=== Example ===
+
+
+== Get Element:  ==
+
+=== Usage ===
+
+=== Example ===
+
+
+== HTML Entity: encodes and decodes HTML entities ==
+
+=== Usage ===
+
+=== Example ===
+
+
+== Array IndexOf:  ==
+
+=== Usage ===
+
+=== Example ===
+
+
+== Namespacing:  ==
+
+=== Usage ===
+
+=== Example ===
+
+
+== Query Encode:  ==
+
+=== Usage ===
+
+=== Example ===
+
+
+== Document onReady:  ==
+
+=== Usage ===
+
+=== Example ===
+
+
+== Stringify: encodes and decodes JSON ==
+
+=== Usage ===
+
+=== Example ===
