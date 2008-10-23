@@ -1,4 +1,6 @@
 /*[name|Animation]*/
+/*[desc|Basic Animation]*/
+
 _.Ac=function(v,n,c,u,y){
   u = 0;
   return y = setInterval(function(){
@@ -14,3 +16,11 @@ _.A=function(h,p,s,e,r,x,f,i,b){
     h.style[p]=r+(s+(e-s)*a)+x
   });
 }
+
+/*[summary|]*/
+/*[usage|
+
+]*/
+/*[example|
+
+]*/

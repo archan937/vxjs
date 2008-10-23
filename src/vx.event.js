@@ -1,4 +1,5 @@
 /*[name|Events]*/
+/*[desc|Event Handling]*/
 
 _.E=function(e, //Element
               t, //Type (Event)
@@ -25,3 +26,11 @@ _.E=function(e, //Element
   } //end add event (IE)
 } //end function
 //end vxEvents
+
+/*[summary|]*/
+/*[usage|
+
+]*/
+/*[example|
+
+]*/
