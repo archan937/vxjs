@@ -12,7 +12,7 @@ function minify($s) {
 }
 
 function parsemeta($s) {
-	if(!preg_match_all('/\/\*\[([^\|]+)\|(.+?)\]\*\//s',$s,$matches,PREG_SET_ORDER)) return array();
+	if(!preg_match_all('/\/\*\[([^\|]+)\|(.*?)\]\*\//s',$s,$matches,PREG_SET_ORDER)) return array();
 	$ret = array();
 	foreach($matches as $m) {
 		$k = trim(strtolower($m[1]));

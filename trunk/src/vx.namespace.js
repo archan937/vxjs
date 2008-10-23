@@ -1,4 +1,5 @@
 /*[name|Namespacing]*/
+/*[desc|Namespace Generation]*/
 
 _.N = function(n) {
 	var r = window, p = n.split('.');
@@ -7,3 +8,11 @@ _.N = function(n) {
 		r = r[p[i]]
 	} return r
 }
+
+/*[summary|]*/
+/*[usage|
+
+]*/
+/*[example|
+
+]*/
