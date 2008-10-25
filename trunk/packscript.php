@@ -2,10 +2,7 @@
 
 require_once('jsmin.class.php');
 
-$header = <<<EOT
-/* vX Super Lightweight Ajax Library */
-
-EOT;
+$header = "";
 
 function minify($s) {
 	return str_replace(';}','}',trim(JSMin::minify($s)));
