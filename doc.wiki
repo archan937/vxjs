@@ -21,6 +21,15 @@ _.X("ajax.php",function(response){alert(response)},"you=suck&howmuch=alot")
 === Example ===
 
 
+== Elements By Class Name: Get Elements By Class Name ==
+
+=== Usage ===
+`_.L(classname[,node=document]);`
+  * classname: the class you want to search for
+  * node: the node to search in, by default, the document
+=== Example ===
+
+
 == Clone: Object Copying and Cloning ==
 A _copy_ of an object is an _independent replica_ of the original. A _clone_ of an object is a "subclass" that _overrides_ the original. The difference between a copy and a clone is that when an object is modified, its copies are unaffected while its clones inherit the changes.
 === Usage ===
