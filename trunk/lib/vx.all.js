@@ -10,10 +10,8 @@ _.F=function(d,h,f,i,c){d=d=='in';_.A(h,'opacity',d?0:1,d?1:0,'','',15,50,c);_.A
 _.G=function(e){return e.style?e:document.getElementById(e)}
 _.H=function(s,d,t){t=document.createElement('textarea');t.innerHTML=s;return d?t.value:t.innerHTML}
 _.I=function(v,a,i){for(i=a.length;i--&&a[i]!=v;);return i}
-_.N=function(n,p,r){p=n.split('.')
-r=window
-for(i in p){if(!r[p[i]])r[p[i]]={};r=r[p[i]]}
-return r}
+_.N=function(n,p,r){p=n.split('.');r=window
+for(i in p){if(!r[p[i]])r[p[i]]={};r=r[p[i]]}return r}
 _.Q=function(j,y,x){y='';for(x in j)y+='&'+x+'='+j[x];return y.substr(1)}
 _.R=function(f){/(?!.*?ati|.*?kit)^moz|ope/i.test(navigator.userAgent)?_.E(document,'DOMContentLoaded',f):setTimeout(f,0)}
 _.S=function(j,d,t){if(d)return eval('('+j+')');if(!j)return j+'';t=[];if(j.pop){for(x in j)t.push(_.S(j[x]));j='['+t.join(',')+']'}else if(typeof j=='object'){for(x in j)t.push(x+':'+_.S(j[x]));j='{'+t.join(',')+'}'}else if(j.split)j="'"+j.replace(/\'/g,"\\'")+"'";return j}
