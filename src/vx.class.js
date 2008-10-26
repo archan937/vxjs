@@ -3,11 +3,11 @@
 /*[desc|Get Elements By Class Name]*/
 
 
-_.L = function(n,d,y,k,z){
+_.L = function(n,d,y,k,h){
   y = (d?d:document).getElementsByTagName("*");
-  z = [];
-  for(k=y.length;k--;)_.I(n,y[k].className.split(" "))<0?0:z.push(y[k]);
-  return z
+  h = [];
+  for(k=y.length;k--;)_.I(n,y[k].className.split(" "))<0?0:h.push(y[k]);
+  return h
 }
 
 
