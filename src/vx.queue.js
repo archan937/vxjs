@@ -8,6 +8,7 @@ _.U = function(l,f){ //l,f
   (f=function(){ //name function "f"
     eval(l.splice(0,1)[0]) //cut off first in array, eval it
   })() //execute function
+  return l;
 }
 
 
