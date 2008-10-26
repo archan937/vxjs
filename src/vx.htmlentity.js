@@ -1,8 +1,8 @@
 /*[name|HTML Entity]*/
 /*[desc|HTML Entity Encoding]*/
 
-_.H=function(s,d) {
-	var t = document.createElement('textarea');
+_.H=function(s,d,t) {
+	t = document.createElement('textarea');
 	t.innerHTML = s;
 	return d?t.value:t.innerHTML;
 }
