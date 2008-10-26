@@ -3,7 +3,7 @@
 
 _.N = function(n,p,r){
   p = n.split('.');
-  r = window
+  r = window;
   for(i in p){
     if(!r[p[i]]) r[p[i]]={};
     r = r[p[i]]
