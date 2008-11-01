@@ -4,7 +4,6 @@
 The vX core package provides a basic toolkit for Web scripting with an emphasis on size and speed. The whole of vX, including subordinate packages, resides within the `_` (underscore) namespace.
 A file containing the full package is available at http://vxjs.googlecode.com/svn/trunk/lib/vx.all.js
 The online build system at http://vxjs.googlecode.com/svn/trunk/build.htm can be used to generate subset packages.
-
 == Ajax: AJAX Query ==
 AJAX is a staple of the "Web 2.0" world. vX provides an extremely lightweight module to perform simple asynchronous GET/POST requests.
 === Usage ===
@@ -79,7 +78,7 @@ original.d = 7
 == Fade: Simple Fade Animation ==
 Fading is probably the most common and most useful effect. It makes sense most people don't like the complexity of the Core Animation function, and want a simpler function.
 === Usage ===
-vF(DIRECTION IN/OUT, HTML ELEMENT[, FRAMES, INTERVAL]);
+`_.F(DIRECTION IN/OUT, HTML ELEMENT[, FRAMES, INTERVAL]);`
 
   * Direction is lowercase, either "in" or "out"
   * Frames/interval are optional
@@ -87,7 +86,7 @@ vF(DIRECTION IN/OUT, HTML ELEMENT[, FRAMES, INTERVAL]);
   * Interval is the frame delay
 === Example ===
 {{{
-vF("out",document.body)
+_.F("out",document.body)
 }}}
 
 == Get Element: Get Element By ID ==
@@ -150,6 +149,13 @@ _.Q({you: "suck", howmuch: "alot"})
 //"you=suck&howmuch=alot"
 }}}
 
+== Queue: Queue ==
+
+=== Usage ===
+
+=== Example ===
+_.U(["_.F('in',document.body,0,0,f)","_.F('out',document.body,0,0,f)"])
+
 == Ready: Document onReady ==
 Many people use Window.onLoad to execute their scripts after the page has loaded. But, there is only 1 window.onload function you can set, and it happens after the images and etc are loaded. Document onReady allows you to execute javascript immediately when the document is ready for manipulation, before images are loaded and you can use it with multiple functions.
 === Usage ===
@@ -179,3 +185,20 @@ _.S({hello: "world!", recurse: {awesome: "true", undef: undefined, notfalse: tru
 _.S("{hello:'world!',recurse:{awesome:'true',undef:undefined,notfalse:true}}",true)
 //{hello:'world!',recurse:{awesome:'true',undef:undefined,notfalse:true}}
 }}}
+
+== Templates: Templates ==
+Simple string templating
+=== Usage ===
+`_.M(string, vars);`
+  * string: the string template
+  * vars: an object with the variables to replace
+=== Example ===
+var template = "hello {name}! I {verb} you! No, not really, I actually {verb2} you.";
+var variables = {
+  name: "Bob",
+  verb: "love",
+  verb: "want to kill"
+}
+
+_.M(template, variables);
+//hello Bob! I love you! No, not really, I actually want to kill you.
