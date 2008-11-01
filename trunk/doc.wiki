@@ -72,7 +72,7 @@ original.d = 7
 == Fade: Simple Fade Animation ==
 Fading is probably the most common and most useful effect. It makes sense most people don't like the complexity of the Core Animation function, and want a simpler function.
 === Usage ===
-vF(DIRECTION IN/OUT, HTML ELEMENT[, FRAMES, INTERVAL]);
+`_.F(DIRECTION IN/OUT, HTML ELEMENT[, FRAMES, INTERVAL]);`
 
   * Direction is lowercase, either "in" or "out"
   * Frames/interval are optional
@@ -80,7 +80,7 @@ vF(DIRECTION IN/OUT, HTML ELEMENT[, FRAMES, INTERVAL]);
   * Interval is the frame delay
 === Example ===
 {{{
-vF("out",document.body)
+_.F("out",document.body)
 }}}
 
 == Get Element: Get Element By ID ==
@@ -179,3 +179,20 @@ _.S({hello: "world!", recurse: {awesome: "true", undef: undefined, notfalse: tru
 _.S("{hello:'world!',recurse:{awesome:'true',undef:undefined,notfalse:true}}",true)
 //{hello:'world!',recurse:{awesome:'true',undef:undefined,notfalse:true}}
 }}}
+
+== Templates: Templates ==
+Simple string templating
+=== Usage ===
+`_.M(string, vars);`
+  * string: the string template
+  * vars: an object with the variables to replace
+=== Example ===
+var template = "hello {name}! I {verb} you! No, not really, I actually {verb2} you.";
+var variables = {
+  name: "Bob",
+  verb: "love",
+  verb: "want to kill"
+}
+
+_.M(template, variables);
+//hello Bob! I love you! No, not really, I actually want to kill you.

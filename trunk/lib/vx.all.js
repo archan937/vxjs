@@ -15,3 +15,4 @@ _.Q=function(j,y,x){y='';for(x in j)y+='&'+x+'='+encodeURIComponent(j[x]);return
 _.U=function(l,f){(f=function(){eval(l.splice(0,1)[0])})();return l}
 _.R=function(f){/(?!.*?ati|.*?kit)^moz|ope/i.test(navigator.userAgent)?_.E(document,'DOMContentLoaded',f):setTimeout(f,0)}
 _.S=function(j,d,t){if(d)return eval('('+j+')');if(!j)return j+'';t=[];if(j.pop){for(x in j)t.push(_.S(j[x]));j='['+t.join(',')+']'}else if(typeof j=='object'){for(x in j)t.push(x+':'+_.S(j[x]));j='{'+t.join(',')+'}'}else if(j.split)j="'"+j.replace(/\'/g,"\\'")+"'";return j}
+_.M=function(t,d,x){for(x in d)t=t.split("{"+x+"}").join(d[x])}
