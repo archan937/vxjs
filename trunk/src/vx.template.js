@@ -1,7 +1,7 @@
 /*[name|Templates]*/
 /*[desc|Templates]*/
 
-_.M=function(t,d,x){for(x in d)t=t.split("{"+x+"}").join(d[x])}
+_.M=function(t,d,x){for(x in d)t=t.split("{"+x+"}").join(d[x]);return t}
 
 /*[summary|Simple string templating]*/
 /*[usage|
@@ -15,7 +15,7 @@ var template = "hello {name}! I {verb} you! No, not really, I actually {verb2} y
 var variables = {
   name: "Bob",
   verb: "love",
-  verb: "want to kill"
+  verb2: "want to kill"
 }
 
 _.M(template, variables);

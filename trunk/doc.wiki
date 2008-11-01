@@ -192,7 +192,7 @@ var template = "hello {name}! I {verb} you! No, not really, I actually {verb2} y
 var variables = {
   name: "Bob",
   verb: "love",
-  verb: "want to kill"
+  verb2: "want to kill"
 }
 
 _.M(template, variables);
