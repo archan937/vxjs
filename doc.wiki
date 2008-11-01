@@ -187,6 +187,7 @@ Simple string templating
   * string: the string template
   * vars: an object with the variables to replace
 === Example ===
+{{{
 var template = "hello {name}! I {verb} you! No, not really, I actually {verb2} you.";
 var variables = {
   name: "Bob",
@@ -196,3 +197,4 @@ var variables = {
 
 _.M(template, variables);
 //hello Bob! I love you! No, not really, I actually want to kill you.
+}}}
