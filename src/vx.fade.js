@@ -10,7 +10,7 @@ _.F=function(d,h,f,i,c){
 
 /*[summary|Fading is probably the most common and most useful effect. It makes sense most people don't like the complexity of the Core Animation function, and want a simpler function.]*/
 /*[usage|
-vF(DIRECTION IN/OUT, HTML ELEMENT[, FRAMES, INTERVAL]);
+`_.F(DIRECTION IN/OUT, HTML ELEMENT[, FRAMES, INTERVAL]);`
 
   * Direction is lowercase, either "in" or "out"
   * Frames/interval are optional
@@ -19,6 +19,6 @@ vF(DIRECTION IN/OUT, HTML ELEMENT[, FRAMES, INTERVAL]);
 ]*/
 /*[example|
 {{{
-vF("out",document.body)
+_.F("out",document.body)
 }}}
 ]*/
