@@ -20,15 +20,19 @@
 <h2>Templating</h2>
 <a href="javascript:void(0)" id="template">Click here</a> to test out Templating.<br>
 
+<h2>Class Names</h2>
+<a href="javascript:void(0)" id="class1">Click here</a> to find elements with the "fxl" class<br>
+<a href="javascript:void(0)" id="class2">Click here</a> to find elements with the "fx" class<br>
+
 <h2>Animation</h2>
-<a href="javascript:void(0)" id="fadeout">Click here</a> to fade out the following block.<br>
-<a href="javascript:void(0)" id="fadein">Click here</a> to fade in the following block.<br>
-<a href="javascript:void(0)" id="customcolor">Click here</a> to animate background-color in the following block.<br>
-<a href="javascript:void(0)" id="customheight">Click here</a> to animate height in the following block.<br>
-<a href="javascript:void(0)" id="chain">Click here</a> to animate lots of crap.<br>
+<a href="javascript:void(0)" class="fxl" id="fadeout">Click here</a> to fade out the following block.<br>
+<a href="javascript:void(0)" class="fxl" id="fadein">Click here</a> to fade in the following block.<br>
+<a href="javascript:void(0)" class="fxl" id="customcolor">Click here</a> to animate background-color in the following block.<br>
+<a href="javascript:void(0)" class="fxl" id="customheight">Click here</a> to animate height in the following block.<br>
+<a href="javascript:void(0)" class="fxl" id="chain">Click here</a> to animate lots of crap.<br>
 
 <br>
-<div id="fx" style="width: 200px; height: 100px; background-color: rgb(0, 255, 0)"></div>
+<div id="fx" class="fx" style="width: 200px; height: 100px; background-color: rgb(0, 255, 0)"></div>
 
 
 
@@ -122,6 +126,14 @@ _.E(_.G("entdec"), "click", function(){
 
 _.E(_.G("entenc"), "click", function(){
   alert(_.H("<moo><poo>"));
+})
+
+_.E(_.G("class1"), "click", function(){
+  alert(_.L("fxl").length)
+})
+
+_.E(_.G("class2"), "click", function(){
+  alert(_.L("fx").length)
 })
 
 var handler = function(){
