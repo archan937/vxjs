@@ -19,6 +19,7 @@
 
 <h2>Templating</h2>
 <a href="javascript:void(0)" id="template">Click here</a> to test out Templating.<br>
+<a href="javascript:void(0)" id="template2">Click here</a> to test out Templating (again).<br>
 
 <h2>Class Names</h2>
 <a href="javascript:void(0)" id="class1">Click here</a> to find elements with the "fxl" class<br>
@@ -119,6 +120,18 @@ _.E(_.G("template"), "click", function(){
   }
   ))
 })
+
+_.E(_.G("template2"), "click", function(){
+  alert(_.M("vX is being {verb} by {noun}, becasue of its {verb2} {adjective}ness.",
+  {
+    verb: prompt("Enter a Past Tense Verb"),
+    verb2: prompt("Enter a Verb"),
+    adjective: prompt("Enter an adjective"),
+    noun: prompt("Enter a Noun")
+  }
+  ))
+})
+
 
 _.E(_.G("entdec"), "click", function(){
   alert(_.H("&lt;moo&gt;&lt;poo&gt;",true));
