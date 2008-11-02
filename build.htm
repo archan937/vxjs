@@ -17,7 +17,13 @@ _.R(function(){
     modules = _.S(json,true);
     for(var x in modules){
       var mod = modules[x];
-      _.G("selectmodules").innerHTML+='<input id="'+x+'" type=checkbox name='+x+'><label for='+x+' title=\''+mod.desc.replace(/\'/g,'\\\'')+'\'>'+mod.name+'</label><br>'
+      var tpl = {
+        x: x,
+        title: mod.desc.replace(/\'/g,'\\\''),
+        name: mod.name 
+      }
+      _.G("selectmodules").innerHTML+=
+      '<input id={x} type=checkbox name={x}><label for={x} title="{title}">{name}</label><br>'
     }
     for(var x in modules){
       _.E(_.G(x), "click", function(){
