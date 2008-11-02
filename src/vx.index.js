@@ -2,7 +2,7 @@
 /*[desc|Array IndexOf]*/
 
 _.I = function(/*Value*/v,/*Array*/a  /*[USELESS VAR*/,i){
-  for(i = a.length; i-- && a[i] != v;);
+  i=a.length;while(i-- && a[i] != v);
   return i;
 }
 
