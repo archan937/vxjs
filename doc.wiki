@@ -21,7 +21,7 @@ _.X("ajax.php",function(response){alert(response)},"you=suck&howmuch=alot")
 === Example ===
 
 
-== Elements By Class Name: Get Elements By Class Name ==
+== Get By Class: Get By Class Name ==
 
 === Usage ===
 `_.L(classname[,node=document]);`

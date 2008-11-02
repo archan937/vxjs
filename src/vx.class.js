@@ -1,6 +1,6 @@
 /*[dep|index]*/
-/*[name|Elements By Class Name]*/
-/*[desc|Get Elements By Class Name]*/
+/*[name|Get By Class]*/
+/*[desc|Get By Class Name]*/
 
 
 _.L = function(n,d,y,k,h){
