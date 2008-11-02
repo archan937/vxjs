@@ -20,6 +20,14 @@
 <a href="javascript:void(0)" id="customcolor">Click here</a> to animate background-color in the following block.<br>
 <a href="javascript:void(0)" id="customheight">Click here</a> to animate height in the following block.<br>
 <a href="javascript:void(0)" id="chain">Click here</a> to animate lots of crap.<br>
+
+<h2>HTML Entities</h2>
+<a href="javascript:void(0)" id="entenc">Click here</a> to encode HTML entities.<br>
+<a href="javascript:void(0)" id="entdec">Click here</a> to decode HTML entities.<br>
+
+<h2>Templating</h2>
+<a href="javascript:void(0)" id="template">Click here</a> to test out Templating.<br>
+
 <br>
 <div id="fx" style="width: 200px; height: 100px; background-color: rgb(0, 255, 0)"></div>
 
@@ -99,7 +107,23 @@ _.E(_.G("stringify"), "click", function(){
   }))
 })
 
+_.E(_.G("template"), "click", function(){
+  alert(_.M("Hello {name}! I {verb} your {noun}.",
+  {
+    name: prompt("Enter A Name"),
+    verb: prompt("Enter a Past Tense Verb"),
+    noun: prompt("Enter a Noun")
+  }
+  ))
+})
 
+_.E(_.G("entdec"), "click", function(){
+  alert(_.H("&lt;moo&gt;&lt;poo&gt;",true));
+})
+
+_.E(_.G("entenc"), "click", function(){
+  alert(_.H("<moo><poo>"));
+})
 
 var handler = function(){
   alert("You see this because events are working")
