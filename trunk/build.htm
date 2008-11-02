@@ -23,7 +23,7 @@ _.R(function(){
         name: mod.name 
       }
       _.G("selectmodules").innerHTML+=
-      '<input id={x} type=checkbox name={x}><label for={x} title="{title}">{name}</label><br>'
+      _.M('<input id={x} type=checkbox name={x}><label for={x} title="{title}">{name}</label><br>',tpl)
     }
     for(var x in modules){
       _.E(_.G(x), "click", function(){
