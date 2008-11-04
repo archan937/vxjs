@@ -1,1 +1,1 @@
-_.I=function(v,a,i){for(i=a.length;i--&&a[i]!=v;);return i}
+function(v,a,i){for(i=a.length;i--&&a[i]!=v;);return i}

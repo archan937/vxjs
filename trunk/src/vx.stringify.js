@@ -2,7 +2,7 @@
 /*[desc|JSON Encoding]*/
 /*[fn|S]*/
 
-_.S=function(j,d,t) {
+function(j,d,t) {
 	if(d) return eval('('+j+')');	
 	if(!j) return j+'';
 	t = [];

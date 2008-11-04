@@ -3,7 +3,7 @@
 /*[desc|Simple Fade Animation]*/
 /*[fn|F]*/
 
-_.F=function(d,h,f,i){
+function(d,h,f,i){
   d=d=='in';
   _.A(f?f:15,i?i:50,function(a){
     a=(d?0:1)+(d?1:-1)*a;
