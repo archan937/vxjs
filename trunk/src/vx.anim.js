@@ -10,12 +10,6 @@ _.O=function(v,n,c,u,y){
   },n);
 }
 
-_.A=function(h,p,s,e,r,x,f,i,b){
-  return _.O(f, i, function(a){
-    (a==1 && b)?b():0;
-    h.style[p]=r+(s+(e-s)*a)+x
-  });
-}
 
 /*[summary|]*/
 /*[usage|
