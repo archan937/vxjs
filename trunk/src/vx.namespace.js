@@ -1,5 +1,6 @@
 /*[name|Namespacing]*/
 /*[desc|Namespace Generation]*/
+/*[fn|N]*/
 
 _.N = function(n,p,r){
   p = n.split('.');

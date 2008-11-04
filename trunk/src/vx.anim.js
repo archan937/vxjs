@@ -1,5 +1,6 @@
 /*[name|Animation]*/
 /*[desc|Basic Animation]*/
+/*[fn|A]*/
 
 _.A=function(v,n,c,u,y){
   u = 0;

@@ -1,7 +1,7 @@
 /*[dep|index]*/
 /*[name|Get By Class]*/
 /*[desc|Get By Class Name]*/
-
+/*[fn|L]*/
 
 _.L = function(n,d,y,k,h){
   y = (d?d:document).getElementsByTagName("*");

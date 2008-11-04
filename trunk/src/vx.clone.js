@@ -1,6 +1,7 @@
 /*[dep|stringify]*/
 /*[name|Clone]*/
 /*[desc|Object Copying and Cloning]*/
+/*[fn|C]*/
 
 _.C=function(j,c) {
 	// a copy is a duplicate of the original

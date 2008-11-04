@@ -1,6 +1,7 @@
 /*[dep|event]*/
 /*[name|Ready]*/
 /*[desc|Document onReady]*/
+/*[fn|R]*/
 
 _.R=function(f){
   /(?!.*?ati|.*?kit)^moz|ope/i.test(navigator.userAgent)? //if happy browser

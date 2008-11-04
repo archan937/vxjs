@@ -1,6 +1,6 @@
 /*[name|Stringify]*/
 /*[desc|JSON Encoding]*/
-
+/*[fn|S]*/
 
 _.S=function(j,d,t) {
 	if(d) return eval('('+j+')');	

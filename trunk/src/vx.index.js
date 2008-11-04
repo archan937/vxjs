@@ -1,5 +1,6 @@
 /*[name|Index]*/
 /*[desc|Array IndexOf]*/
+/*[fn|I]*/
 
 _.I = function(/*Value*/v,/*Array*/a  /*[USELESS VAR*/,i){
   for(i = a.length; i-- && a[i] != v;);

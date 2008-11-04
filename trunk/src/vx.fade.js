@@ -1,6 +1,7 @@
 /*[dep|anim]*/
 /*[name|Fade]*/
 /*[desc|Simple Fade Animation]*/
+/*[fn|F]*/
 
 _.F=function(d,h,f,i){
   d=d=='in';

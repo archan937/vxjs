@@ -1,5 +1,6 @@
 /*[name|Events]*/
 /*[desc|Event Handling]*/
+/*[fn|E]*/
 
 _.E=function(e, //Element
               t, //Type (Event)
