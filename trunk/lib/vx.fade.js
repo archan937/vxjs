@@ -1,1 +1,1 @@
-_.F=function(d,h,f,i,c){d=d=='in';_.A(h,'opacity',d?0:1,d?1:0,'','',f?f:15,i?i:50,c);_.A(h,'filter',d?0:100,d?100:0,'alpha(opacity=',')',f?f:15,i?i:50,c)}
+_.F=function(d,h,f,i){d=d=='in';_.O(f?f:15,i?i:50,function(a){h.style.opacity=a;h.style.filter='alpha(opacity='+100*a+')'})}
