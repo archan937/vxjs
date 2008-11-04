@@ -4,7 +4,7 @@
 
 //var lt=["_.F('in',document.body,0,0,fn)","_.F('out',document.body,0,0,fn)"];
 
-_.U = function(l,f){ //l,f 
+function(l,f){ //l,f 
   (f=function(){ //name function "f"
     eval(l.splice(0,1)[0]) //cut off first in array, eval it
   })(); //execute function
