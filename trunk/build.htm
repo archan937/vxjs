@@ -8,8 +8,8 @@
 var selmod = []
 var modsrc = {};
 var modules = {};
-var altc = "var _=_?_:{}\n";
-
+var header = "var _=_?_:{\n";
+var end = "\n}";
 
 _.R(function(){
   _.X("modules.json?"+_.Q({ck: Math.random()}),function(json){
@@ -67,12 +67,12 @@ function rebuild(){
   var mods = [];
   
   for(var u = 0; u < selmod.length; u++){
-    mods.push(modsrc[selmod[u]])
+    mods.push(modules[selmod[u]].fn+":"+modsrc[selmod[u]]+((selmod.length-u==1)?"":","))
   }
   
   code += mods.join("\n");
   
-  code=(code.length>0)?(altc+code):"/*No Modules Selected*/"
+  code=(code.length>0)?(header+code+end):"/*No Modules Selected*/"
   _.G("build").value = code
   _.G("size").innerHTML = "Size: "+code.length+" bytes";
 }
