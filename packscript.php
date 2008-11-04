@@ -34,6 +34,7 @@ foreach(glob('src/vx.*.js') as $fn) {
 		'name'	=> @$metadata['name'][0]?$metadata['name'][0]:$modname,
 		'desc'	=> @$metadata['desc']?implode('. ',$metadata['desc']):'',
 		'note'	=> @$metadata['note']?implode('. ',$metadata['note']):'',
+		'fn'	=> @$metadata['fn']?implode('. ',$metadata['fn']):'',
 		'dep'	=> @$metadata['dep']?explode(',',implode(',',$metadata['dep'])):array()
 	);
 	$doc .= '== '.trim(@$metadata['name'][0]?$metadata['name'][0]:$modname).': '.trim(@$metadata['desc']?implode("\n",$metadata['desc']):'').' =='."\n".trim(@$metadata['summary']?implode("\n",$metadata['summary']):'')."\n".'=== Usage ==='."\n".trim(@$metadata['usage']?implode("\n",$metadata['usage']):'')."\n".'=== Example ==='."\n".trim(@$metadata['example']?implode("\n",$metadata['example']):'')."\n\n";

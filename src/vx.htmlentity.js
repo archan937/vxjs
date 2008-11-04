@@ -1,5 +1,6 @@
 /*[name|HTML Entity]*/
 /*[desc|HTML Entity Encoding]*/
+/*[fn|H]*/
 
 _.H=function(s,d,t) {
 	t = document.createElement('textarea');

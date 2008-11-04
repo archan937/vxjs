@@ -1,5 +1,6 @@
 /*[name|Ajax]*/
 /*[desc|AJAX Query]*/
+/*[fn|X]*/
 
 _.X=function(u,f,p,x){
 //x=this.ActiveXObject?new ActiveXObject('Microsoft.XMLHTTP'):new XMLHttpRequest();

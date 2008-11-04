@@ -1,5 +1,6 @@
 /*[name|Query Encode]*/
 /*[desc|Query Encoding]*/
+/*[fn|Q]*/
 
 _.Q=function(j,y,x){
   y='';
