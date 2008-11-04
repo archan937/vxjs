@@ -2,7 +2,7 @@
 
 require_once('jsmin.class.php');
 
-$header = "var _=_?_:{";
+$header = "_={";
 $footer = "\n}";
 
 function minify($s) {
