@@ -5,7 +5,7 @@
 _.F=function(d,h,f,i){
   d=d=='in';
   _.A(f?f:15,i?i:50,function(a){
-    a=(d?0:1)+(d?1:-1)*a
+    a=(d?0:1)+(d?1:-1)*a;
     h.style.opacity=a;
     h.style.filter='alpha(opacity='+100*a+')';
   })
