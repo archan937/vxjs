@@ -4,7 +4,7 @@
 
 _.F=function(d,h,f,i){
   d=d=='in';
-  _.O(f?f:15,i?i:50,function(a){
+  _.A(f?f:15,i?i:50,function(a){
     h.style.opacity=a;
     h.style.filter='alpha(opacity='+100*a+')';
   })
