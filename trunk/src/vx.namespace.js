@@ -2,7 +2,7 @@
 /*[desc|Namespace Generation]*/
 /*[fn|N]*/
 
-function(n,p,r){
+_.N = function(n,p,r){
   p = n.split('.');
   r = window;
   for(i in p){

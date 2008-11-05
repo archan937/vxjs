@@ -2,7 +2,7 @@
 /*[desc|Query Encoding]*/
 /*[fn|Q]*/
 
-function(j,y,x){
+_.Q=function(j,y,x){
   y='';
   for(x in j)y+='&'+x+'='+encodeURIComponent(j[x]);
   return y.substr(1)

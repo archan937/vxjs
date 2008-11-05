@@ -2,7 +2,7 @@
 /*[desc|AJAX Query]*/
 /*[fn|X]*/
 
-function(u,f,p,x){
+_.X=function(u,f,p,x){
 //x=this.ActiveXObject?new ActiveXObject('Microsoft.XMLHTTP'):new XMLHttpRequest();
   x=new(this.ActiveXObject?ActiveXObject:XMLHttpRequest)('Microsoft.XMLHTTP');
   x.open(p?'POST':'GET',u,!0);

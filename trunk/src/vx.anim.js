@@ -2,7 +2,7 @@
 /*[desc|Basic Animation]*/
 /*[fn|A]*/
 
-function(v,n,c,u,y){
+_.A=function(v,n,c,u,y){
   u = 0;
   return y = setInterval(function(){
     c(u/v);

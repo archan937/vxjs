@@ -1,1 +1,0 @@
-function(j,c){if(c)return _.S(_.S(j),!0);function p(){};p.prototype=j;return new p()}
