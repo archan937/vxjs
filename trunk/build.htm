@@ -8,8 +8,8 @@
 var selmod = []
 var modsrc = {};
 var modules = {};
-var header = "_={\n";
-var end = "\n}";
+var altc = "var _=_?_:{}\n";
+
 
 _.R(function(){
   _.X("modules.json?"+_.Q({ck: Math.random()}),function(json){
@@ -67,12 +67,12 @@ function rebuild(){
   var mods = [];
   
   for(var u = 0; u < selmod.length; u++){
-    mods.push(modules[selmod[u]].fn+":"+modsrc[selmod[u]]+((selmod.length-u==1)?"":","))
+    mods.push(modsrc[selmod[u]])
   }
   
   code += mods.join("\n");
   
-  code=(code.length>0)?(header+code+end):"/*No Modules Selected*/"
+  code=(code.length>0)?(altc+code):"/*No Modules Selected*/"
   _.G("build").value = code
   _.G("size").innerHTML = "Size: "+code.length+" bytes";
 }
@@ -82,6 +82,7 @@ function rebuild(){
 <div id="selectmodules">Loading Module List...</div>
 <br>
 <span id="size">Size: 23 bytes</span><br>
-<textarea id="build" style="width: 100%; height: 500px">
+<textarea id="build" style="width: 100%; height: 300px">
 /*No Modules Selected*/
+
 </textarea>
