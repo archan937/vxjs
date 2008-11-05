@@ -2,7 +2,7 @@
 /*[desc|Get Element By ID]*/
 /*[fn|G]*/
 
-function(e){
+_.G=function(e){
   return e.style?e:document.getElementById(e)
 }
 
