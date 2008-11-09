@@ -2,7 +2,7 @@
 /*[desc|AJAX Query]*/
 /*[fn|X]*/
 
-_.X=function(u,f,p,x){
+_.X=function(u,f,d,x){
 //x=this.ActiveXObject?new ActiveXObject('Microsoft.XMLHTTP'):new XMLHttpRequest();
   x=new(this.ActiveXObject?ActiveXObject:XMLHttpRequest)('Microsoft.XMLHTTP');
 //x.open(p?'POST':'GET',u,!0);
@@ -14,7 +14,7 @@ _.X=function(u,f,p,x){
   //x.readyState==4&&f?f(x.responseText,x):f
     x.readyState>3&&f?f(x.responseText,x):0
   };
-  x.send(p)
+  x.send(d)
 }
 
 /*[summary|AJAX is a staple of the "Web 2.0" world. vX provides an extremely lightweight module to perform simple asynchronous GET/POST requests.]*/
