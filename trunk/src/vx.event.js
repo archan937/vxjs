@@ -12,12 +12,12 @@ _.E=function(e, //Element
     ( //if attach event
       r? //if remove
       e.detachEvent('on'+t,e[t+f]): //remove
-      !0 //tell to run add event
+      1 //tell to run add event
     ): //else (no attach event)
     ( //if no attachEvent
     r? //remove?
-      e.removeEventListener(t,f,!1): //if yes, then remove (standards)
-      e.addEventListener(t,f,!1) //if no, then add (standards)
+      e.removeEventListener(t,f,0): //if yes, then remove (standards)
+      e.addEventListener(t,f,0) //if no, then add (standards)
     ) //end if no attachEvent
    //end if
   ){ //start add event (IE)
