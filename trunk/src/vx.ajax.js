@@ -2,9 +2,12 @@
 /*[desc|AJAX Query]*/
 /*[fn|X]*/
 
-_.X=function(u,f,d,x){
+//_.X=function(u,f,d,x){
+_.X=function(u,f,d,x,y){
 //x=this.ActiveXObject?new ActiveXObject('Microsoft.XMLHTTP'):new XMLHttpRequest();
-  x=new(this.ActiveXObject?ActiveXObject:XMLHttpRequest)('Microsoft.XMLHTTP');
+  y=this.ActiveXObject;
+//x=new(this.ActiveXObject?ActiveXObject:XMLHttpRequest)('Microsoft.XMLHTTP');
+  x=new(y?y:XMLHttpRequest)('Microsoft.XMLHTTP');
 //x.open(p?'POST':'GET',u,!0);
   x.open(d?'POST':'GET',u,1);
   
