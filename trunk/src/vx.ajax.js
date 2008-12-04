@@ -2,12 +2,11 @@
 /*[desc|AJAX Query]*/
 /*[fn|X]*/
 
-//_.X=function(u,f,d,x){
-_.X=function(u,f,d,x,y){
+_.X=function(u,f,d,x){
 //x=this.ActiveXObject?new ActiveXObject('Microsoft.XMLHTTP'):new XMLHttpRequest();
-  y=this.ActiveXObject;
+  x=this.ActiveXObject; //reuse x variable
 //x=new(this.ActiveXObject?ActiveXObject:XMLHttpRequest)('Microsoft.XMLHTTP');
-  x=new(y?y:XMLHttpRequest)('Microsoft.XMLHTTP');
+  x=new(x?x:XMLHttpRequest)('Microsoft.XMLHTTP'); //if there's the MS XHR, use it, else use stnadards
 //x.open(p?'POST':'GET',u,!0);
   x.open(d?'POST':'GET',u,1);
   
