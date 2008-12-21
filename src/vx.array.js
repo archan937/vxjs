@@ -1,6 +1,6 @@
 /*[name|Array]*/
 /*[desc|Convert iterables to real arrays]*/
-/*[fn|C]*/
+/*[fn|Y]*/
 
 _.Y = function(a){
   for(var b=a.length,c=[];b--;)c.push(a[b]);
