@@ -21,6 +21,21 @@ _.X("ajax.php",function(response){alert(response)},"you=suck&howmuch=alot")
 === Example ===
 
 
+== Array: Convert iterables to real arrays ==
+Accepts an array-like collection and returns an array equivalent
+=== Usage ===
+`_.Y(collection);`
+  * collection: anything with numberical iterators
+=== Example ===
+{{{
+// a bunch of dom nodes
+var original = document.body.childNodes
+// create a clone and override a property
+var array = _.Y(original)
+// array functions like splice, etc. 
+array.splice(1,1); //get rid of first object
+}}}
+
 == Get By Class: Get By Class Name ==
 
 === Usage ===
