@@ -3,7 +3,7 @@
 /*[desc|Document onReady]*/
 /*[fn|R]*/
 
-_.R=function(f){
+_.ready=_.R=function(f){
   /(?!.*?ati|.*?kit)^moz|ope/i.test(navigator.userAgent)? //if happy browser
     _.E(document,'DOMContentLoaded',f): //then use DOMContentLoaded
     setTimeout(f,0) //or else, do setTimeout

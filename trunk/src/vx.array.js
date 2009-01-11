@@ -2,7 +2,7 @@
 /*[desc|Convert iterables to real arrays]*/
 /*[fn|Y]*/
 
-_.Y = function(a){
+_.array=_.Y = function(a){
   for(var b=a.length,c=[];b--;)c.push(a[b]);
   return c
 }
