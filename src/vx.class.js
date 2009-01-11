@@ -1,9 +1,9 @@
 /*[dep|index]*/
 /*[name|Get By Class]*/
 /*[desc|Get By Class Name]*/
-/*[fn|L]*/
+/*[fn|C]*/
 
-_.class=_.L = function(n,d,y,k,h){
+_.class=_.C = function(n,d,y,k,h){
   y = (d?d:document).getElementsByTagName("*");
   h = [];
   for(k=y.length;k--;)_.I(n,y[k].className.split(" "))<0?0:h.push(y[k]);
