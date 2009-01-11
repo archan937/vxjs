@@ -1,9 +1,9 @@
 /*[dep|stringify]*/
 /*[name|Clone]*/
 /*[desc|Object Copying and Cloning]*/
-/*[fn|C]*/
+/*[fn|O]*/
 
-_.clone=_.C=function(j,c) {
+_.clone=_.O=function(j,c) {
 	// a copy is a duplicate of the original
 	if(c) return _.S(_.S(j),1); //1 = true
 	// a clone is an empty object with a prototype reference to the original
