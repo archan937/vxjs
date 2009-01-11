@@ -105,6 +105,15 @@ _.F("out",document.body)
 === Example ===
 
 
+== Has Class: Has Class ==
+
+=== Usage ===
+`_.HC(element, classname);`
+  * classname: the class you want to search for
+  * element: the node check for
+=== Example ===
+
+
 == HTML Entity: HTML Entity Encoding ==
 When dealing with HTML and XML, it is often necessary to convert troublesome characters into entities. The HTML entity encoder escapes and unescapes strings.
 === Usage ===

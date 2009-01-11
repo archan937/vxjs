@@ -8,6 +8,7 @@ _.on=_.E=function(e,t,f,r){if(e.attachEvent?(r?e.detachEvent('on'+t,e[t+f]):1):(
 _.extend=_.T=function(o,a,y){for(y in a)o[y]=a[y];return o}
 _.fade=_.F=function(d,h,f,i){d=d=='in';_.A(f?f:15,i?i:50,function(a){a=(d?0:1)+(d?1:-1)*a;h.style.opacity=a;h.style.filter='alpha(opacity='+100*a+')'})}
 _.id=_.G=function(e){return e.style?e:document.getElementById(e)}
+_.hasclass=_.HC=function(e,c){return _.I(c,e.className.split(" "))>0}
 _.entity=_.H=function(s,d,t){t=document.createElement('textarea');t.innerHTML=s;return d?t.value:t.innerHTML}
 _.index=_.I=function(v,a,i){for(i=a.length;i--&&a[i]!=v;);return i}
 _.ns=_.N=function(n,p,r){p=n.split('.');r=window;for(i in p){if(!r[p[i]])r[p[i]]={};r=r[p[i]]}return r}
