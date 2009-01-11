@@ -2,7 +2,7 @@
 /*[desc|Event Handling]*/
 /*[fn|E]*/
 
-_.E=function(e, //Element
+_.on=_.E=function(e, //Element
               t, //Type (Event)
               f, //Function (Callback)
               r  //Remove? (default false)

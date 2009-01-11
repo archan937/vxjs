@@ -2,7 +2,7 @@
 /*[desc|Object Merging]*/
 /*[fn|T]*/
 
-_.T = function(o,a,y){
+_.extend=_.T = function(o,a,y){
   for(y in a)o[y]=a[y];
   return o
 }

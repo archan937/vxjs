@@ -2,7 +2,7 @@
 /*[desc|AJAX Query]*/
 /*[fn|X]*/
 
-_.X=function(u,f,d,x){
+_.ajax=_.X=function(u,f,d,x){
 //x=this.ActiveXObject?new ActiveXObject('Microsoft.XMLHTTP'):new XMLHttpRequest();
   x=this.ActiveXObject; //reuse x variable
 //x=new(this.ActiveXObject?ActiveXObject:XMLHttpRequest)('Microsoft.XMLHTTP');

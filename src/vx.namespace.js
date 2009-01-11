@@ -2,7 +2,7 @@
 /*[desc|Namespace Generation]*/
 /*[fn|N]*/
 
-_.N = function(n,p,r){
+_.namespace=_.N = function(n,p,r){
   p = n.split('.');
   r = window;
   for(i in p){
