@@ -2,7 +2,7 @@
 /*[desc|HTML Entity Encoding]*/
 /*[fn|H]*/
 
-_.htmlentity=_.H=function(s,d,t) {
+_.entity=_.H=function(s,d,t) {
 	t = document.createElement('textarea');
 	t.innerHTML = s;
 	return d?t.value:t.innerHTML;
