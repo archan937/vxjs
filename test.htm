@@ -25,6 +25,10 @@
 <a href="javascript:void(0)" id="class1">Click here</a> to find elements with the "fxl" class<br>
 <a href="javascript:void(0)" id="class2">Click here</a> to find elements with the "fx" class<br>
 
+<h2>Strings</h2>
+<a href="javascript:void(0)" id="strtrim">Click here</a> to trim text<br>
+
+
 <h2>Animation</h2>
 <a href="javascript:void(0)" class="fxl" id="fadeout">Click here</a> to fade out the following block.<br>
 <a href="javascript:void(0)" class="fxl" id="fadein">Click here</a> to fade in the following block.<br>
@@ -91,6 +95,11 @@ _.E(_.G("template"), "click", function(){
     noun: prompt("Enter a Noun")
   }
   ))
+})
+
+_.E(_.G("strtrim"), "click", function(){
+  alert(_.trim(prompt("enter a string with trailing or prepended whitepace to trim!")));
+  
 })
 
 _.E(_.G("template2"), "click", function(){
