@@ -1,1 +1,1 @@
-_.hasclass=_.HC=function(e,c){return _.I(c,e.className.split(" "))>0}
+_.addclass=_.AC=function(e,c){if(_.HC(e))e.className+=' '+c}
