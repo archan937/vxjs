@@ -5,6 +5,15 @@ The vX core package provides a basic toolkit for Web scripting with an emphasis 
 A file containing the full package is available at http://vxjs.googlecode.com/svn/trunk/lib/vx.all.js
 The online build system at http://vxjs.googlecode.com/svn/trunk/build.htm can be used to generate subset packages.
 
+== Add Class: Add Class ==
+
+=== Usage ===
+`_.AC(element, classname);`
+  * classname: the class you want to add
+  * element: the node add to
+=== Example ===
+
+
 == Ajax: AJAX Query ==
 AJAX is a staple of the "Web 2.0" world. vX provides an extremely lightweight module to perform simple asynchronous GET/POST requests.
 === Usage ===
@@ -28,7 +37,22 @@ _.X("ajax.php",function(response){alert(response)},"you=suck&howmuch=alot")
 === Example ===
 
 
-== Elements By Class Name: Get Elements By Class Name ==
+== Array: Convert iterables to real arrays ==
+Accepts an array-like collection and returns an array equivalent
+=== Usage ===
+`_.Y(collection);`
+  * collection: anything with numberical iterators
+=== Example ===
+{{{
+// a bunch of dom nodes
+var original = document.body.childNodes
+// create a clone and override a property
+var array = _.Y(original)
+// array functions like splice, etc. 
+array.splice(1,1); //get rid of first object
+}}}
+
+== Get By Class: Get By Class Name ==
 
 === Usage ===
 `_.L(classname[,node=document]);`
@@ -94,6 +118,15 @@ _.F("out",document.body)
 
 === Usage ===
 
+=== Example ===
+
+
+== Has Class: Has Class ==
+
+=== Usage ===
+`_.HC(element, classname);`
+  * classname: the class you want to search for
+  * element: the node check for
 === Example ===
 
 
@@ -199,7 +232,7 @@ var template = "hello {name}! I {verb} you! No, not really, I actually {verb2} y
 var variables = {
   name: "Bob",
   verb: "love",
-  verb: "want to kill"
+  verb2: "want to kill"
 }
 
 _.M(template, variables);
