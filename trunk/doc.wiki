@@ -266,3 +266,14 @@ var variables = {
 _.M(template, variables);
 //hello Bob! I love you! No, not really, I actually want to kill you.
 }}}
+
+== Trim String: Remove leading and ending whitespace ==
+Remove leading and ending whitespace
+=== Usage ===
+`_.TM(string);`
+  * string: a block of text
+=== Example ===
+{{{
+_.trim("   i am a blob of     text       ")
+//i am a blob of     text
+}}}
