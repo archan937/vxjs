@@ -1,11 +1,12 @@
+/*[dep|short]*/
 /*[name|Script Include]*/
 /*[desc|Dynamically load a script]*/
 /*[fn|N]*/
 
 _.include=_.N=function(s,e){
-  e=document.createElement('script');
+  e=_.d.createElement('script');
   e.src=s;
-  document.body.appendChild(e)
+  _.d.body.appendChild(e)
 }
 
 /*[summary|Dynamic loading scripts are an Ajax design pattern.]*/
