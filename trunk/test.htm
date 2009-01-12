@@ -28,6 +28,11 @@
 <h2>Strings</h2>
 <a href="javascript:void(0)" id="strtrim">Click here</a> to trim text<br>
 
+<h2>Script Loader</h2>
+<a href="javascript:void(0)" id="scriptload">Click here</a> to load <a href="http://wikify.antimatter15.com">Wikify</a><br>
+
+
+
 
 <h2>Animation</h2>
 <a href="javascript:void(0)" class="fxl" id="fadeout">Click here</a> to fade out the following block.<br>
@@ -98,7 +103,7 @@ _.E(_.G("template"), "click", function(){
 })
 
 _.E(_.G("strtrim"), "click", function(){
-  alert(_.trim(prompt("enter a string with trailing or prepended whitepace to trim!")));
+  alert(_.trim(prompt("enter a string with trailing or prepended whitepace to trim!","     poooop    ")));
   
 })
 
@@ -113,6 +118,10 @@ _.E(_.G("template2"), "click", function(){
   ))
 })
 
+
+_.E(_.G("scriptload"),"click", function(){
+  _.include("http://wikify.antimatter15.com/static2/core.js");
+})
 
 _.E(_.G("entdec"), "click", function(){
   alert(_.H("&lt;moo&gt;&lt;poo&gt;",true));
