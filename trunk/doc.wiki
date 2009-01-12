@@ -1,9 +1,9 @@
-== Has Class: Has Class ==
+== Add Class: Add Class ==
 
 === Usage ===
-`_.HC(element, classname);`
-  * classname: the class you want to search for
-  * element: the node check for
+`_.AC(element, classname);`
+  * classname: the class you want to add
+  * element: the node add to
 === Example ===
 
 
