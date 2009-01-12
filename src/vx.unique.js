@@ -3,10 +3,9 @@
 /*[fn|unique]*/
 
 _.unique=function(a){
-  for(var b=a.length,c=[];b--;) //loop elements
-  _.I(a[b],c)>0? //if not in list
+  for(var b=a.length,c=[];b--;)_.I(a[b],c)>0? //loop if not in list
     0:c.push(a[b]); //add it
-  return c
+  return c //return
 }
 
 /*[summary|Create a new unique array]*/
