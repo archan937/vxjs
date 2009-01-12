@@ -1,1 +1,1 @@
-_.remove=_.V=function(e,o,x){x=_.I(e,o);x>0?o.splice(x,1):0;return o}
+_.remove=_.V=function(e,o,x){x=_.I(e,o);x>0?o.splice(x,1):0}
