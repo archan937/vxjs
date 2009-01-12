@@ -1,1 +1,0 @@
-_.addclass=_.AC=function(e,c){if(_.HC(e))e.className+=' '+c}
