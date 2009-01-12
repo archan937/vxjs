@@ -222,6 +222,15 @@ var array = _.Y(original)
 array.splice(1,1); //get rid of first object
 }}}
 
+== vX Shortcuts: Used mostly internally ==
+lets vX be smaller
+=== Usage ===
+document = _.d
+=== Example ===
+{{{
+document = _.d
+}}}
+
 == Stringify: JSON Encoding ==
 The JSON encoder serializes complex objects into JSON strings suitable for AJAX queries and unserializes JSON strings into objects.
 === Usage ===
