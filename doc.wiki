@@ -196,6 +196,22 @@ _.R(function(){
 })
 }}}
 
+== Array Remove: Remove items from arrays ==
+Removes an the first occurance of an element from an array. NOTE: MODIFIES ORIGINAL
+=== Usage ===
+`_.V(element, array);`
+  * element: anything with numberical iterators
+  * array: anything with numberical iterators
+=== Example ===
+{{{
+// a bunch of dom nodes
+var original = document.body.childNodes
+// create a clone and override a property
+var array = _.Y(original)
+// array functions like splice, etc. 
+array.splice(1,1); //get rid of first object
+}}}
+
 == Stringify: JSON Encoding ==
 The JSON encoder serializes complex objects into JSON strings suitable for AJAX queries and unserializes JSON strings into objects.
 === Usage ===
