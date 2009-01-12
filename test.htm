@@ -30,6 +30,7 @@
 
 <h2>Script Loader</h2>
 <a href="javascript:void(0)" id="scriptload">Click here</a> to load something<br>
+<a href="javascript:void(0)" id="scriptload2">Click here</a> to load Firebug Lite!<br>
 
 
 
@@ -120,7 +121,13 @@ _.E(_.G("template2"), "click", function(){
 
 
 _.E(_.G("scriptload"),"click", function(){
-  _.include("http://wikify.antimatter15.com/static2/core.js");
+  _.include("http://vxjs.googlecode.com/svn-history/r266/trunk/scriptloadtest.js");
+})
+
+//http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js
+
+_.E(_.G("scriptload2"),"click", function(){
+  _.include("http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js");
 })
 
 _.E(_.G("entdec"), "click", function(){
