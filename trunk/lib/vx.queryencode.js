@@ -1,0 +1,1 @@
+_.query=_.Q=function(j,y,x){y='';for(x in j)y+='&'+x+'='+encodeURIComponent(j[x]);return y.substr(1)}
