@@ -3,7 +3,7 @@
 /*[fn|TM]*/
 
 _.trim = _.TM = function(t){
-  return t.replace(/^\s|\s+$/g,'')
+  return t.replace(/^\s+|\s+$/g,'')
 }
 
 /*[summary|Remove leading and ending whitespace]*/
