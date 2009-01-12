@@ -7,6 +7,7 @@
 
 var selmod = []
 var modsrc = {};
+var modlist = [];
 var modules = {};
 var altc = "var _=_?_:{}\n";
 
@@ -16,6 +17,7 @@ _.R(function(){
     _.G("selectmodules").innerHTML="";
     modules = _.S(json,true);
     for(var x in modules){
+      modlist.push(x)
       var mod = modules[x];
       var tpl = {
         x: x,
@@ -35,6 +37,13 @@ _.R(function(){
 
 
 function checkmods(){
+  setTimeout(function(){
+  if(selmod.length==modlist.length){
+    _.G("all").checked=true
+  }else{
+    _.G("all").checked=false
+  }
+  },10);
   for(var k in modules){
     if(_.G(k).checked && _.I(k,selmod) == -1){ //needs inArray functionality
       selmod.push(k);
@@ -77,8 +86,22 @@ function rebuild(){
   _.G("size").innerHTML = "Size: "+code.length+" bytes";
 }
 
+function changeall(x){
+  for(var k in modules){
+    if(x.checked == true){
+      _.G(k).checked = true
+    }else{
+      _.G(k).checked = false
+    }
+  }
+  checkmods();
+}
 
 </script>
+<input type="checkbox" name=all id=all onchange="changeall(this)">
+<label for=all title="Select All"><b>Select All</b></label>
+
+<br>
 <div id="selectmodules">Loading Module List...</div>
 <br>
 <span id="size">Size: 23 bytes</span><br>
