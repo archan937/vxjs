@@ -3,7 +3,7 @@
 
 <h2>Ajax</h2>
 <a href="javascript:void(0)" id="ajax">Click here</a> to find out the size of the vX Javascript Library using vX Ajax.<br>
-<span>Size: </span><span id="vxs">Why dont you try finding out?</span>
+<span>Size: </span><span id="vxs">Why dont you try finding out? (not this has not been updated)</span>
 
 <h2>JSON</h2>
 <a href="javascript:void(0)" id="urlencode">Click here</a> to see queryencoded json.<br>
@@ -49,7 +49,7 @@
 
 _.E(_.G("ajax"), "click", function(){
   _.G("vxs").innerHTML = "Checking...";
-  //you understand I could just do one request to vx.js and get that size. but I dont feel like it.
+  //you understand I could just do one request to vx.all.js and get that size. but I dont feel like it.
   var count = 0;
   var files = ["vx.js","vx.ajax.js","vx.event.js","vx.anim.js","vx.queryencode.js","vx.fade.js","vx.stringify.js","vx.clone.js"];
   var done = 0;
@@ -128,6 +128,12 @@ _.E(_.G("scriptload"),"click", function(){
 
 _.E(_.G("scriptload2"),"click", function(){
   _.include("http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js");
+  (function(){
+  if(window.firebug.version){
+  firebug.init();
+  }else{
+  setTimeout(arguments.callee);
+  }})();
 })
 
 _.E(_.G("entdec"), "click", function(){
