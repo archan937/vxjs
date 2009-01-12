@@ -141,6 +141,16 @@ _.H('ham &amp; eggs',true)
 //"ham & eggs"
 }}}
 
+== Script Include: Dynamically load a script ==
+Dynamic loading scripts are an Ajax design pattern.
+=== Usage ===
+`_.N('vx.index.js');`
+  * location: the location of the js file to load from
+=== Example ===
+{{{
+_.N('vx.index.js');
+}}}
+
 == Index: Array IndexOf ==
 
 === Usage ===
