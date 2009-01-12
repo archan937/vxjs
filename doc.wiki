@@ -277,3 +277,14 @@ Remove leading and ending whitespace
 _.trim("   i am a blob of     text       ")
 //i am a blob of     text
 }}}
+
+== Array Unique: Create a new unique array ==
+Create a new unique array
+=== Usage ===
+`_.unique(array);`
+  * array: an array with stuff
+=== Example ===
+{{{
+_.unique([1,3,3,7])
+//[1,3,7]
+}}}
