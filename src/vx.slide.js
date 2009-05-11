@@ -1,6 +1,7 @@
 /*[name|Slide Animation]*/
 /*[desc|Slide Animation]*/
 /*[fn|slide]*/
+/*[dep|anim]*/
 
 _.slide = function(d,e,o,q){
 q = e.clientHeight;
