@@ -1,6 +1,6 @@
 var _=_?_:{}
 _.addclass=_.AC=function(e,c){if(_.HC(e))e.className+=' '+c}
-_.ajax=_.X=function(u,f,d,x){x=this.ActiveXObject;x=new(x?x:XMLHttpRequest)('Microsoft.XMLHTTP');x.open(d?'POST':'GET',u,1);x.setRequestHeader('Content-type','application/x-www-form-urlencoded');x.onreadystatechange=function(){x.readyState>3&&f?f(x.responseText,x):0};x.send(d)}
+_.ajax=_.X=function(u,f,d,x){x=window.ActiveXObject;x=new(x?x:XMLHttpRequest)('Microsoft.XMLHTTP');x.open(d?'POST':'GET',u,1);x.setRequestHeader('Content-type','application/x-www-form-urlencoded');x.onreadystatechange=function(){x.readyState>3&&f?f(x.responseText,x):0};x.send(d)}
 _.fx=_.A=function(v,n,c,u,y){u=0;return y=setInterval(function(){c(u/v);++u>v?clearInterval(y):0},n)}
 _.array=_.Y=function(a){for(var b=a.length,c=[];b--;)c.push(a[b]);return c}
 _.cls=_.C=function(n,d,y,k,h){y=(d?d:_.d).getElementsByTagName("*");h=[];for(k=y.length;k--;)_.I(n,y[k].className.split(" "))<0?0:h.push(y[k]);return h}
@@ -23,3 +23,4 @@ _.json=_.S=function(j,d,t){if(d)return eval('('+j+')');if(!j)return j+'';t=[];if
 _.tpl=_.M=function(t,d,x){for(x in d)t=t.split("{"+x+"}").join(d[x]);return t}
 _.trim=_.TM=function(t){return t.replace(/^\s+|\s+$/g,'')}
 _.unique=function(a){for(var b=a.length,c=[];b--;)_.I(a[b],c)>0?0:c.push(a[b]);return c}
+_.slide = function(d,e,o,q){q=e.clientHeight;_.A(15,10,function(a){a=(d?0:1)+(d?1:-1)*a;e.style.height=(a*q)+'px'},o)}
