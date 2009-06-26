@@ -231,6 +231,15 @@ document = _.d
 document = _.d
 }}}
 
+== Slide Animation: Slide Animation ==
+The query encoder builds an HTTP query string out of a Javascript object; this simple serialization scheme prepares data for sending to the server.
+=== Usage ===
+`_.slide(direction,element);`
+  * direction: to expand or to contract
+  * element: the element to animate
+=== Example ===
+
+
 == Stringify: JSON Encoding ==
 The JSON encoder serializes complex objects into JSON strings suitable for AJAX queries and unserializes JSON strings into objects.
 === Usage ===
