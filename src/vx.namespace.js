@@ -11,10 +11,13 @@ _.ns=_.N = function(n,p,r){
   }return r
 }
 
-/*[summary|]*/
+/*[summary|Generate long namespaces (objects) chained together somehow.]*/
 /*[usage|
-
+`_.N(namespace string);`
+  * namespace: a string with names split by periods
 ]*/
 /*[example|
-
+_.N('com.vxjs.beta.application.longname.library.core') = 42;
+com.vx.beta.applciation.longname.library.core
+//42
 ]*/

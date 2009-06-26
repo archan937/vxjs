@@ -6,7 +6,8 @@ _.d=document
 
 /*[summary|lets vX be smaller]*/
 /*[usage|
-document = _.d
+`_.d`
+  * no arguments. a link to document
 ]*/
 /*[example|
 {{{

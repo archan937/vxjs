@@ -13,7 +13,7 @@ _.include=_.N=function(s,e){
 /*[usage|
 `_.N('vx.index.js');`
   * location: the location of the js file to load from
-
+  * Note: it can be across a different domain.
 ]*/
 /*[example|
 {{{
