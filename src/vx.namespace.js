@@ -17,7 +17,9 @@ _.ns=_.N = function(n,p,r){
   * namespace: a string with names split by periods
 ]*/
 /*[example|
+{{{
 _.N('com.vxjs.beta.application.longname.library.core') = 42;
 com.vx.beta.applciation.longname.library.core
 //42
+}}}
 ]*/

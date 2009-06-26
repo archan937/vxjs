@@ -14,5 +14,7 @@ _.id=_.G=function(e){
   * Note: if id is an element, then it returns the element
 ]*/
 /*[example|
+{{{
 _.G("hello").innerHTML = "happy"
+}}}
 ]*/
