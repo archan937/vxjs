@@ -104,11 +104,24 @@ _.E(document.body, "click", function(){
 }}}
 
 == Extend Object: Object Merging ==
-
+Sometimes you need to extend an object with new attributes.
 === Usage ===
+`_.T(original, new);`
 
+  * original: the first JS object
+  * new: the extendee whose attributes will be put in the new object
 === Example ===
-
+{{{
+    _.extend({
+      "hello": "world",
+      "internet": "LOLCAT"
+    },
+    {
+      "name": "toni avonni",
+      "job": "Cheese salesman"
+    });
+    //{"hello": "world", "internet": "LOLCAT", "name":"toni avonni","job": "cheese salesman"}
+  }}}
 
 == Fade: Simple Fade Animation ==
 Fading is probably the most common and most useful effect. It makes sense most people don't like the complexity of the Core Animation function, and want a simpler function.
@@ -119,6 +132,7 @@ Fading is probably the most common and most useful effect. It makes sense most p
   * Frames/interval are optional
   * Frames is number of frames in animation
   * Interval is the frame delay
+  * note: anything not 'in' is treated as 'out'
 === Example ===
 {{{
 _.F("out",document.body)
