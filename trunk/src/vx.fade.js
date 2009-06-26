@@ -21,6 +21,7 @@ _.fade=_.F=function(d,h,f,i){
   * Frames/interval are optional
   * Frames is number of frames in animation
   * Interval is the frame delay
+  * note: anything not 'in' is treated as 'out'
 ]*/
 /*[example|
 {{{
