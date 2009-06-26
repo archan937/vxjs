@@ -4,6 +4,7 @@
 The vX core package provides a basic toolkit for Web scripting with an emphasis on size and speed. The whole of vX, including subordinate packages, resides within the `_` (underscore) namespace.
 A file containing the full package is available at http://vxjs.googlecode.com/svn/trunk/lib/vx.all.js
 The online build system at http://vxjs.googlecode.com/svn/trunk/build.htm can be used to generate subset packages.
+
 == Add Class: Add Class ==
 Add a class to an element (does not add if already present)
 === Usage ===
@@ -11,7 +12,9 @@ Add a class to an element (does not add if already present)
   * classname: the class you want to add
   * element: the node add to
 === Example ===
+{{{
 _.AC(document.body, 'purple')
+}}}
 
 == Ajax: AJAX Query ==
 AJAX is a staple of the "Web 2.0" world. vX provides an extremely lightweight module to perform simple asynchronous GET/POST requests.
@@ -37,9 +40,12 @@ Here is a low level complicated yet flexible linear animation function. It is no
   * interval: numer of milliseconds between frames
   * callback: function called at every frame with the argument a number between 0 and 1
 === Example ===
+{{{
+
 _.A(100, 100, function(p){
   _.G("progress").innerHTML = (p*100)+"%"
 })
+}}}
 
 == Array: Convert iterables to real arrays ==
 Accepts an array-like collection and returns an array equivalent
@@ -99,9 +105,12 @@ Event handling is quite an important thing. It just is. If you want something to
   * handler: the function that will be triggered when event occurs
   * remove: set true to remove
 === Example ===
+{{{
+
 _.E(document.body, "click", function(){
   alert('YOU CLICKED ME!')
 });
+}}}
 
 == Extend Object: Object Merging ==
 
@@ -131,7 +140,9 @@ Most frameworks include shortcuts for common functions such as document.getEleme
   * id: the name of the element
   * Note: if id is an element, then it returns the element
 === Example ===
+{{{
 _.G("hello").innerHTML = "happy"
+}}}
 
 == Has Class: Has Class ==
 detecting whether a CSS class is present in an element
@@ -140,9 +151,11 @@ detecting whether a CSS class is present in an element
   * classname: the class you want to search for
   * element: the node check for
 === Example ===
+{{{
 if(_.HC(document.body, 'purple')){
 alert('YAY PURPLE')
 }
+}}}
 
 == HTML Entity: HTML Entity Encoding ==
 When dealing with HTML and XML, it is often necessary to convert troublesome characters into entities. The HTML entity encoder escapes and unescapes strings.
@@ -195,9 +208,11 @@ Generate long namespaces (objects) chained together somehow.
 `_.N(namespace string);`
   * namespace: a string with names split by periods
 === Example ===
+{{{
 _.N('com.vxjs.beta.application.longname.library.core') = 42;
 com.vx.beta.applciation.longname.library.core
 //42
+}}}
 
 == Query Encode: Query Encoding ==
 The query encoder builds an HTTP query string out of a Javascript object; this simple serialization scheme prepares data for sending to the server.
@@ -217,7 +232,9 @@ _.Q({you: "suck", howmuch: "alot"})
 `_.U(eval function array);`
   * array: an array of functions like in the example with an argument (a function) that is called when finished
 === Example ===
+{{{
 _.U(["_.F('in',document.body,0,0,f)","_.F('out',document.body,0,0,f)"])
+}}}
 
 == Ready: Document onReady ==
 Many people use Window.onLoad to execute their scripts after the page has loaded. But, there is only 1 window.onload function you can set, and it happens after the images and etc are loaded. Document onReady allows you to execute javascript immediately when the document is ready for manipulation, before images are loaded and you can use it with multiple functions.
