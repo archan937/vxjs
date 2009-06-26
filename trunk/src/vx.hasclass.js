@@ -13,7 +13,9 @@ _.hasclass=_.HC=function(e,c){
   * element: the node check for
 ]*/
 /*[example|
+{{{
 if(_.HC(document.body, 'purple')){
 alert('YAY PURPLE')
 }
+}}}
 ]*/

@@ -14,5 +14,7 @@ _.addclass=_.AC=function(e,c){
   * element: the node add to
 ]*/
 /*[example|
+{{{
 _.AC(document.body, 'purple')
+}}}
 ]*/

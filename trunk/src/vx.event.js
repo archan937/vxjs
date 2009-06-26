@@ -37,7 +37,9 @@ _.on=_.E=function(e, //Element
   * remove: set true to remove
 ]*/
 /*[example|
+{{{
 _.E(document.body, "click", function(){
   alert('YOU CLICKED ME!')
 });
+}}}
 ]*/
