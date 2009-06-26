@@ -1,11 +1,11 @@
 == Add Class: Add Class ==
-
+Add a class to an element (does not add if already present)
 === Usage ===
 `_.AC(element, classname);`
   * classname: the class you want to add
   * element: the node add to
 === Example ===
-
+_.AC(document.body, 'purple')
 
 == Ajax: AJAX Query ==
 AJAX is a staple of the "Web 2.0" world. vX provides an extremely lightweight module to perform simple asynchronous GET/POST requests.
@@ -24,11 +24,16 @@ _.X("ajax.php",function(response){alert(response)},"you=suck&howmuch=alot")
 }}}
 
 == Animation: Basic Animation ==
-
+Here is a low level complicated yet flexible linear animation function. It is not reccomended
 === Usage ===
-
+`_.A(frames, interval, callback);`
+  * frames: number of blocks to split animation into
+  * interval: numer of milliseconds between frames
+  * callback: function called at every frame with the argument a number between 0 and 1
 === Example ===
-
+_.A(100, 100, function(p){
+  _.G("progress").innerHTML = (p*100)+"%"
+})
 
 == Array: Convert iterables to real arrays ==
 Accepts an array-like collection and returns an array equivalent
@@ -80,11 +85,17 @@ original.d = 7
 }}}
 
 == Events: Event Handling ==
-
+Event handling is quite an important thing. It just is. If you want something to happen in response to something, then you need it.
 === Usage ===
-
+`_.E(element, event type, handler function, [,remove=false]);`
+  * element: the element to attach or remove the handler from/to
+  * type: the event to attach to, a string. Examples: "click", "keydown", "keyup", "mouseup", "mousedown"
+  * handler: the function that will be triggered when event occurs
+  * remove: set true to remove
 === Example ===
-
+_.E(document.body, "click", function(){
+  alert('YOU CLICKED ME!')
+});
 
 == Extend Object: Object Merging ==
 
@@ -108,20 +119,24 @@ _.F("out",document.body)
 }}}
 
 == Get Element: Get Element By ID ==
-
+Most frameworks include shortcuts for common functions such as document.getElementById, famous ones include $ in Prototype and MooTools
 === Usage ===
-
+`_.G(element id);`
+  * id: the name of the element
+  * Note: if id is an element, then it returns the element
 === Example ===
-
+_.G("hello").innerHTML = "happy"
 
 == Has Class: Has Class ==
-
+detecting whether a CSS class is present in an element
 === Usage ===
 `_.HC(element, classname);`
   * classname: the class you want to search for
   * element: the node check for
 === Example ===
-
+if(_.HC(document.body, 'purple')){
+alert('YAY PURPLE')
+}
 
 == HTML Entity: HTML Entity Encoding ==
 When dealing with HTML and XML, it is often necessary to convert troublesome characters into entities. The HTML entity encoder escapes and unescapes strings.
@@ -146,6 +161,7 @@ Dynamic loading scripts are an Ajax design pattern.
 === Usage ===
 `_.N('vx.index.js');`
   * location: the location of the js file to load from
+  * Note: it can be across a different domain.
 === Example ===
 {{{
 _.N('vx.index.js');
@@ -168,11 +184,14 @@ _.I("ham", breakfast);
 }}}
 
 == Namespacing: Namespace Generation ==
-
+Generate long namespaces (objects) chained together somehow.
 === Usage ===
-
+`_.N(namespace string);`
+  * namespace: a string with names split by periods
 === Example ===
-
+_.N('com.vxjs.beta.application.longname.library.core') = 42;
+com.vx.beta.applciation.longname.library.core
+//42
 
 == Query Encode: Query Encoding ==
 The query encoder builds an HTTP query string out of a Javascript object; this simple serialization scheme prepares data for sending to the server.
@@ -189,7 +208,8 @@ _.Q({you: "suck", howmuch: "alot"})
 == Queue: Queue ==
 
 === Usage ===
-
+`_.U(eval function array);`
+  * array: an array of functions like in the example with an argument (a function) that is called when finished
 === Example ===
 _.U(["_.F('in',document.body,0,0,f)","_.F('out',document.body,0,0,f)"])
 
@@ -225,7 +245,8 @@ array.splice(1,1); //get rid of first object
 == vX Shortcuts: Used mostly internally ==
 lets vX be smaller
 === Usage ===
-document = _.d
+`_.d`
+  * no arguments. a link to document
 === Example ===
 {{{
 document = _.d
@@ -288,7 +309,7 @@ _.trim("   i am a blob of     text       ")
 }}}
 
 == Array Unique: Create a new unique array ==
-Create a new unique array
+Create a new array with only unique items from an array with repeating items
 === Usage ===
 `_.unique(array);`
   * array: an array with stuff
