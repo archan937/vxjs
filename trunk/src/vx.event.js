@@ -28,10 +28,16 @@ _.on=_.E=function(e, //Element
 } //end function
 //end vxEvents
 
-/*[summary|]*/
+/*[summary|Event handling is quite an important thing. It just is. If you want something to happen in response to something, then you need it.]*/
 /*[usage|
-
+`_.E(element, event type, handler function, [,remove=false]);`
+  * element: the element to attach or remove the handler from/to
+  * type: the event to attach to, a string. Examples: "click", "keydown", "keyup", "mouseup", "mousedown"
+  * handler: the function that will be triggered when event occurs
+  * remove: set true to remove
 ]*/
 /*[example|
-
+_.E(document.body, "click", function(){
+  alert('YOU CLICKED ME!')
+});
 ]*/

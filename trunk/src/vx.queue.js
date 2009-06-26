@@ -14,7 +14,8 @@ _.queue=_.U = function(l,n){ //l,f
 
 /*[summary|]*/
 /*[usage|
-
+`_.U(eval function array);`
+  * array: an array of functions like in the example with an argument (a function) that is called when finished
 ]*/
 /*[example|
 _.U(["_.F('in',document.body,0,0,f)","_.F('out',document.body,0,0,f)"])

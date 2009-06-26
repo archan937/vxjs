@@ -8,7 +8,7 @@ _.unique=function(a){
   return c //return
 }
 
-/*[summary|Create a new unique array]*/
+/*[summary|Create a new array with only unique items from an array with repeating items]*/
 /*[usage|
 `_.unique(array);`
   * array: an array with stuff
