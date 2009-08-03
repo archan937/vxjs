@@ -22,7 +22,7 @@ function parsemeta($s) {
 $content = '';
 $lib = array();
 $doc = '';
-$header = '';
+$header = '== Function List =='."\n";
 foreach(glob('src/vx.*.js') as $fn) {
 	$data = file_get_contents($fn);
 	$metadata = parsemeta($data);
