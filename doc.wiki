@@ -219,6 +219,21 @@ com.vx.beta.applciation.longname.library.core
 //42
 }}}
 
+== Position: Element Position ==
+Sometimes it's important to get the location and size of an element.
+=== Usage ===
+`_.P(element);`
+  * element: the HTML element to get
+  * returns object with l, t, w and h.
+=== Example ===
+{{{
+var pos = _.P(_.G("el"));
+alert("Width: "+pos.w);
+alert("Height:"+pos.h);
+alert("Top:"+pos.t);
+alert("Left:"+pos.l);
+}}}
+
 == Query Encode: Query Encoding ==
 The query encoder builds an HTTP query string out of a Javascript object; this simple serialization scheme prepares data for sending to the server.
 === Usage ===
