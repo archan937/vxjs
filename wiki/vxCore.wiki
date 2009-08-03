@@ -5,7 +5,7 @@ The vX core package provides a basic toolkit for Web scripting with an emphasis 
 A file containing the full package is available at http://vxjs.googlecode.com/svn/trunk/lib/vx.all.js
 The online build system at http://vxjs.googlecode.com/svn/trunk/build.htm can be used to generate subset packages.
 
-
+[#Animation:_Basic_Animation]
 
 == Add Class: Add Class ==
 Add a class to an element (does not add if already present)
