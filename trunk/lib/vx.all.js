@@ -1,4 +1,4 @@
-var _=_?{}:{};vx=_
+var _=_?_:{};vx=_
 _.addclass=_.AC=function(e,c){if(_.HC(e))e.className+=' '+c}
 _.ajax=_.X=function(u,f,d,x){x=window.ActiveXObject;x=new(x?x:XMLHttpRequest)('Microsoft.XMLHTTP');x.open(d?'POST':'GET',u,1);x.setRequestHeader('Content-type','application/x-www-form-urlencoded');x.onreadystatechange=function(){x.readyState>3&&f?f(x.responseText,x):0};x.send(d)}
 _.fx=_.A=function(v,n,c,u,y){u=0;return y=setInterval(function(){c(u/v);++u>v?clearInterval(y):0},n)}
