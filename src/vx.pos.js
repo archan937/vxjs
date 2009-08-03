@@ -3,7 +3,7 @@
 /*[fn|P]*/
 /*[ref|http://www.quirksmode.org/js/findpos.html]*/
 
-_.pos_.P=function(e,a){
+_.pos=_.P=function(e,a){
   a={l:0,t:0,w:e.offsetWidth,h:e.offsetHeight};
   do{
     a.l += e.offsetLeft;
