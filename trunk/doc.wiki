@@ -1,4 +1,5 @@
-* [#Add_Class:_Add_Class Add Class: Add Class]
+== Function List ==
+  * [#Add_Class:_Add_Class Add Class: Add Class]
   * [#Ajax:_AJAX_Query Ajax: AJAX Query]
   * [#Animation:_Basic_Animation Animation: Basic Animation]
   * [#Array:_Convert_iterables_to_real_arrays Array: Convert iterables to real arrays]
