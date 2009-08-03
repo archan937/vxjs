@@ -1,4 +1,4 @@
-var _=_?_:{}
+var _=_?{}:{};vx=_
 _.addclass=_.AC=function(e,c){if(_.HC(e))e.className+=' '+c}
 _.ajax=_.X=function(u,f,d,x){x=window.ActiveXObject;x=new(x?x:XMLHttpRequest)('Microsoft.XMLHTTP');x.open(d?'POST':'GET',u,1);x.setRequestHeader('Content-type','application/x-www-form-urlencoded');x.onreadystatechange=function(){x.readyState>3&&f?f(x.responseText,x):0};x.send(d)}
 _.fx=_.A=function(v,n,c,u,y){u=0;return y=setInterval(function(){c(u/v);++u>v?clearInterval(y):0},n)}
@@ -14,7 +14,8 @@ _.entity=_.H=function(s,d,t){t=_.d.createElement('textarea');t.innerHTML=s;retur
 _.include=_.N=function(s,e){e=_.d.createElement('script');e.src=s;_.d.body.appendChild(e)}
 _.index=_.I=function(v,a,i){for(i=a.length;i--&&a[i]!=v;);return i}
 _.ns=_.N=function(n,p,r){p=n.split('.');r=window;for(i in p){if(!r[p[i]])r[p[i]]={};r=r[p[i]]}return r}
-_.pos_.P=function(e,a){a={l:0,t:0,w:e.offsetWidth,h:e.offsetHeight};do{a.l+=e.offsetLeft;a.t+=e.offsetTop}while(o=o.offsetParent)return a}
+_.ninja=function(){delete _;return vx}
+_.pos=_.P=function(e,a){a={l:0,t:0,w:e.offsetWidth,h:e.offsetHeight};do{a.l+=e.offsetLeft;a.t+=e.offsetTop}while(o=o.offsetParent)return a}
 _.query=_.Q=function(j,y,x){y='';for(x in j)y+='&'+x+'='+encodeURIComponent(j[x]);return y.substr(1)}
 _.queue=_.U=function(l,n){(n=function(){eval(l.splice(0,1)[0])})();return l}
 _.ready=_.R=function(f){/(?!.*?ati|.*?kit)^moz|ope/i.test(navigator.userAgent)?_.E(_.d,'DOMContentLoaded',f):setTimeout(f,0)}
