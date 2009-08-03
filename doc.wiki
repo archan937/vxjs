@@ -255,7 +255,7 @@ Sometimes it's important to get the location and size of an element.
   * returns object with l, t, w and h.
 === Example ===
 {{{
-var pos = _.P(_.G("el"));
+var pos = _.pos(_.G("el"));
 alert("Width: "+pos.w);
 alert("Height:"+pos.h);
 alert("Top:"+pos.t);
