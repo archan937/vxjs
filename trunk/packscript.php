@@ -22,6 +22,7 @@ function parsemeta($s) {
 $content = '';
 $lib = array();
 $doc = '';
+$header = '';
 foreach(glob('src/vx.*.js') as $fn) {
 	$data = file_get_contents($fn);
 	$metadata = parsemeta($data);
@@ -37,7 +38,9 @@ foreach(glob('src/vx.*.js') as $fn) {
 		'fn'	=> @$metadata['fn']?implode('. ',$metadata['fn']):'',
 		'dep'	=> @$metadata['dep']?explode(',',implode(',',$metadata['dep'])):array()
 	);
-	$doc .= '== '.trim(@$metadata['name'][0]?$metadata['name'][0]:$modname).': '.trim(@$metadata['desc']?implode("\n",$metadata['desc']):'').' =='."\n".trim(@$metadata['summary']?implode("\n",$metadata['summary']):'')."\n".'=== Usage ==='."\n".trim(@$metadata['usage']?implode("\n",$metadata['usage']):'')."\n".'=== Example ==='."\n".trim(@$metadata['example']?implode("\n",$metadata['example']):'')."\n\n";
+	$title = trim(@$metadata['name'][0]?$metadata['name'][0]:$modname).': '.trim(@$metadata['desc']?implode("\n",$metadata['desc']):'');
+	$header .= '[#'.str_replace(" ",'',$title).' '.$title.']'."\n";
+	$doc .= '== '.$title.' =='."\n".trim(@$metadata['summary']?implode("\n",$metadata['summary']):'')."\n".'=== Usage ==='."\n".trim(@$metadata['usage']?implode("\n",$metadata['usage']):'')."\n".'=== Example ==='."\n".trim(@$metadata['example']?implode("\n",$metadata['example']):'')."\n\n";
 }
 $prepared = minify(@file_get_contents('src/vx.js'));
 if($prepared != @file_get_contents('lib/vx.js')) file_put_contents('lib/vx.js',$prepared);
@@ -45,6 +48,6 @@ $prepared = trim($header.minify($prepared.$content));
 if($prepared != @file_get_contents('lib/vx.all.js')) file_put_contents('lib/vx.all.js',$prepared);
 $prepared = json_encode($lib);
 if($prepared != @file_get_contents('modules.json')) file_put_contents('modules.json',$prepared);
-$prepared = trim($doc);
+$prepared = trim($header."\n".$doc);
 if($prepared != @file_get_contents('doc.wiki')) file_put_contents('doc.wiki',$prepared);
 ?>
