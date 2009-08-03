@@ -5,7 +5,32 @@ The vX core package provides a basic toolkit for Web scripting with an emphasis 
 A file containing the full package is available at http://vxjs.googlecode.com/svn/trunk/lib/vx.all.js
 The online build system at http://vxjs.googlecode.com/svn/trunk/build.htm can be used to generate subset packages.
 
-[#Animation:_Basic_Animation]
+[#AddClass:AddClass Add Class: Add Class]
+[#Ajax:AJAXQuery Ajax: AJAX Query]
+[#Animation:BasicAnimation Animation: Basic Animation]
+[#Array:Convertiterablestorealarrays Array: Convert iterables to real arrays]
+[#GetByClass:GetByClassName Get By Class: Get By Class Name]
+[#Clone:ObjectCopyingandCloning Clone: Object Copying and Cloning]
+[#Events:EventHandling Events: Event Handling]
+[#ExtendObject:ObjectMerging Extend Object: Object Merging]
+[#Fade:SimpleFadeAnimation Fade: Simple Fade Animation]
+[#GetElement:GetElementByID Get Element: Get Element By ID]
+[#HasClass:HasClass Has Class: Has Class]
+[#HTMLEntity:HTMLEntityEncoding HTML Entity: HTML Entity Encoding]
+[#ScriptInclude:Dynamicallyloadascript Script Include: Dynamically load a script]
+[#Index:ArrayIndexOf Index: Array IndexOf]
+[#Namespacing:NamespaceGeneration Namespacing: Namespace Generation]
+[#Position:ElementPosition Position: Element Position]
+[#QueryEncode:QueryEncoding Query Encode: Query Encoding]
+[#Queue:Queue Queue: Queue]
+[#Ready:DocumentonReady Ready: Document onReady]
+[#ArrayRemove:Removeitemsfromarrays Array Remove: Remove items from arrays]
+[#vXShortcuts:Usedmostlyinternally vX Shortcuts: Used mostly internally]
+[#SlideAnimation:SlideAnimation Slide Animation: Slide Animation]
+[#Stringify:JSONEncoding Stringify: JSON Encoding]
+[#Templates:Templates Templates: Templates]
+[#TrimString:Removeleadingandendingwhitespace Trim String: Remove leading and ending whitespace]
+[#ArrayUnique:Createanewuniquearray Array Unique: Create a new unique array]
 
 == Add Class: Add Class ==
 Add a class to an element (does not add if already present)
