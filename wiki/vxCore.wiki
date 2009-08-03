@@ -4,6 +4,10 @@
 The vX core package provides a basic toolkit for Web scripting with an emphasis on size and speed. The whole of vX, including subordinate packages, resides within the `_` (underscore) namespace.
 A file containing the full package is available at http://vxjs.googlecode.com/svn/trunk/lib/vx.all.js
 The online build system at http://vxjs.googlecode.com/svn/trunk/build.htm can be used to generate subset packages.
+
+= Overview =
+The vX Javascript library is designed to be small. There are several ways to do most things. All functions have a long, human readable name and many have shortcuts that are a single uppercase letter. For example, _.ajax maps to _.X, while some are simpler to memorize than others. Everything is prefixed with the _ symbol, similar to how many other libraries prefix things with $. Everything can be alternatively accessed through the vx object as well.
+
 == Function List ==
   * [#Add_Class:_Add_Class Add Class: Add Class]
   * [#Ajax:_AJAX_Query Ajax: AJAX Query]
@@ -20,6 +24,7 @@ The online build system at http://vxjs.googlecode.com/svn/trunk/build.htm can be
   * [#Script_Include:_Dynamically_load_a_script Script Include: Dynamically load a script]
   * [#Index:_Array_IndexOf Index: Array IndexOf]
   * [#Namespacing:_Namespace_Generation Namespacing: Namespace Generation]
+  * [#Ninja:_Ninja_Mode Ninja: Ninja Mode]
   * [#Position:_Element_Position Position: Element Position]
   * [#Query_Encode:_Query_Encoding Query Encode: Query Encoding]
   * [#Queue:_Queue Queue: Queue]
@@ -253,6 +258,19 @@ Generate long namespaces (objects) chained together somehow.
 _.N('com.vxjs.beta.application.longname.library.core') = 42;
 com.vx.beta.applciation.longname.library.core
 //42
+}}}
+
+== Ninja: Ninja Mode ==
+Similar to jQuery's noConflict()
+=== Usage ===
+`_.ninja(extreme);`
+  * extreme: remove both _ and vx from global namespace
+  * warning: may break certain components!
+=== Example ===
+{{{
+(function(_){
+  //vX stuffs
+})(vx.ninja())
 }}}
 
 == Position: Element Position ==
