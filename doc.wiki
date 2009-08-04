@@ -55,12 +55,13 @@ _.X("ajax.php",function(response){alert(response)},"you=suck&howmuch=alot")
 }}}
 
 == Animation: Basic Animation ==
-Here is a low level complicated yet flexible linear animation function. It is not reccomended
+Here is a low level complicated yet flexible linear animation function. It is not recomended for normal use
 === Usage ===
-`_.A(frames, interval, callback);`
+`_.A(frames, interval, callback, finishcallback);`
   * frames: number of blocks to split animation into
   * interval: numer of milliseconds between frames
   * callback: function called at every frame with the argument a number between 0 and 1
+  * finishcallback: a callback for when the animation is over
 === Example ===
 {{{
 _.A(100, 100, function(p){
@@ -155,12 +156,13 @@ Sometimes you need to extend an object with new attributes.
 == Fade: Simple Fade Animation ==
 Fading is probably the most common and most useful effect. It makes sense most people don't like the complexity of the Core Animation function, and want a simpler function.
 === Usage ===
-`_.F(DIRECTION IN/OUT, HTML ELEMENT[, FRAMES, INTERVAL]);`
+`_.F(DIRECTION IN/OUT, HTML ELEMENT[, END CALLBACK, FRAMES, INTERVAL]);`
 
   * Direction is lowercase, either "in" or "out"
   * Frames/interval are optional
   * Frames is number of frames in animation
   * Interval is the frame delay
+  * end callback is functino executed at end
   * note: anything not 'in' is treated as 'out'
 === Example ===
 {{{
