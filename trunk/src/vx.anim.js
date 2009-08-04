@@ -4,10 +4,10 @@
 
 _.fx=_.A=function(v,n,c,f,u,y){
   u = 0;
-  (function(){
+  (y=function(){
     c(u/v); //execute the callback
     u++<v? //check if reached max frames
-    setTimeout(arguments.callee,n): //if not then continue
+    setTimeout(y,n): //if not then continue
     (f?f():0) //or else end and callback
   })() //run first loop
 }
