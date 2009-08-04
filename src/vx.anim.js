@@ -5,8 +5,7 @@
 _.fx=_.A=function(v,n,c,f,u,y){
   u = 0;
   (y=function(){
-    c(u/v); //execute the callback
-    u++<v? //check if reached max frames
+    u++<v&&c(u/v)!==0? //check if reached max frames
     setTimeout(y,n): //if not then continue
     (f?f():0) //or else end and callback
   })() //run first loop
@@ -19,6 +18,7 @@ _.fx=_.A=function(v,n,c,f,u,y){
   * interval: numer of milliseconds between frames
   * callback: function called at every frame with the argument a number between 0 and 1
   * finishcallback: a callback for when the animation is over
+  * if callback return is 0, then animation is cancelled
 ]*/
 /*[example|
 {{{
