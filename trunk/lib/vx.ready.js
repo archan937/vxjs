@@ -1,1 +1,1 @@
-_.ready=_.R=function(f){/(?!.*?ati|.*?kit)^moz|ope/i.test(navigator.userAgent)?_.E(_.d,'DOMContentLoaded',f):setTimeout(f,0)}
+_.ready=_.R=function(f){"\v"=="v"?setTimeout(f,0):_.E(_.d,'DOMContentLoaded',f)}
