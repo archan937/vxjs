@@ -7,12 +7,12 @@ The online build system at http://vxjs.googlecode.com/svn/trunk/build.htm can be
 
 = Overview =
 The vX Javascript library is designed to be small. There are several ways to do most things. All functions have a long, human readable name and many have shortcuts that are a single uppercase letter. For example, _.ajax maps to _.X, while some are simpler to memorize than others. Everything is prefixed with the _ symbol, similar to how many other libraries prefix things with $. Everything can be alternatively accessed through the vx object as well.
-
 == Function List ==
   * [#Add_Class:_Add_Class Add Class: Add Class]
   * [#Ajax:_AJAX_Query Ajax: AJAX Query]
   * [#Animation:_Basic_Animation Animation: Basic Animation]
   * [#Array:_Convert_iterables_to_real_arrays Array: Convert iterables to real arrays]
+  * [#Bind:_Bind_a_functiont_to_a_scope Bind: Bind a functiont to a scope]
   * [#Get_By_Class:_Get_By_Class_Name Get By Class: Get By Class Name]
   * [#Clone:_Object_Copying_and_Cloning Clone: Object Copying and Cloning]
   * [#Events:_Event_Handling Events: Event Handling]
@@ -65,12 +65,14 @@ _.X("ajax.php",function(response){alert(response)},"you=suck&howmuch=alot")
 }}}
 
 == Animation: Basic Animation ==
-Here is a low level complicated yet flexible linear animation function. It is not reccomended
+Here is a low level complicated yet flexible linear animation function. It is not recomended for normal use
 === Usage ===
-`_.A(frames, interval, callback);`
+`_.A(frames, interval, callback, finishcallback);`
   * frames: number of blocks to split animation into
   * interval: numer of milliseconds between frames
   * callback: function called at every frame with the argument a number between 0 and 1
+  * finishcallback: a callback for when the animation is over
+  * if callback return is 0, then animation is cancelled
 === Example ===
 {{{
 
@@ -92,6 +94,22 @@ var original = document.body.childNodes
 var array = _.Y(original)
 // array functions like splice, etc. 
 array.splice(1,1); //get rid of first object
+}}}
+
+== Bind: Bind a functiont to a scope ==
+Bind a function to a scope, such as for event handlers
+=== Usage ===
+`_.B(function, scope);`
+  * function: a function to call when the return is called
+  * scope: the scope to call the funciton from
+  * returns: function
+=== Example ===
+{{{
+function VectorEditor(elem, width, height){
+  this.draw.canvas.onmousedown = _.bind(function(event){
+    this.onMouseDown(event.clientX - offset()[0], event.clientY - offset()[1], event.target)
+  }, this);
+}
 }}}
 
 == Get By Class: Get By Class Name ==
@@ -167,12 +185,13 @@ Sometimes you need to extend an object with new attributes.
 == Fade: Simple Fade Animation ==
 Fading is probably the most common and most useful effect. It makes sense most people don't like the complexity of the Core Animation function, and want a simpler function.
 === Usage ===
-`_.F(DIRECTION IN/OUT, HTML ELEMENT[, FRAMES, INTERVAL]);`
+`_.F(DIRECTION IN/OUT, HTML ELEMENT[, END CALLBACK, FRAMES, INTERVAL]);`
 
   * Direction is lowercase, either "in" or "out"
   * Frames/interval are optional
   * Frames is number of frames in animation
   * Interval is the frame delay
+  * end callback is functino executed at end
   * note: anything not 'in' is treated as 'out'
 === Example ===
 {{{
@@ -352,9 +371,12 @@ document = _.d
 == Slide Animation: Slide Animation ==
 The query encoder builds an HTTP query string out of a Javascript object; this simple serialization scheme prepares data for sending to the server.
 === Usage ===
-`_.slide(direction,element);`
+`_.slide(direction,element[, finishcallback, frames, interval]);`
   * direction: to expand or to contract
   * element: the element to animate
+  * finishcallback: function to call when done
+  * frames: number of frames in animation
+  * interval: milliseconds between frames
 === Example ===
 
 
