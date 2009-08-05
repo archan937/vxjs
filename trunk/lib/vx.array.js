@@ -1,1 +1,1 @@
-_.array=_.Y=function(a){for(var b=a.length,c=[];b--;)c.push(a[b]);return c}
+_.array=_.Y=function(a,b){for(b=a.length,c=[];b--;)c.push(a[b]);return c}
