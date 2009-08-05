@@ -3,6 +3,7 @@
   * [#Ajax:_AJAX_Query Ajax: AJAX Query]
   * [#Animation:_Basic_Animation Animation: Basic Animation]
   * [#Array:_Convert_iterables_to_real_arrays Array: Convert iterables to real arrays]
+  * [#Bind:_Bind_a_functiont_to_a_scope Bind: Bind a functiont to a scope]
   * [#Get_By_Class:_Get_By_Class_Name Get By Class: Get By Class Name]
   * [#Clone:_Object_Copying_and_Cloning Clone: Object Copying and Cloning]
   * [#Events:_Event_Handling Events: Event Handling]
@@ -83,6 +84,22 @@ var original = document.body.childNodes
 var array = _.Y(original)
 // array functions like splice, etc. 
 array.splice(1,1); //get rid of first object
+}}}
+
+== Bind: Bind a functiont to a scope ==
+Bind a function to a scope, such as for event handlers
+=== Usage ===
+`_.B(function, scope);`
+  * function: a function to call when the return is called
+  * scope: the scope to call the funciton from
+  * returns: function
+=== Example ===
+{{{
+function VectorEditor(elem, width, height){
+  this.draw.canvas.onmousedown = _.bind(function(event){
+    this.onMouseDown(event.clientX - offset()[0], event.clientY - offset()[1], event.target)
+  }, this);
+}
 }}}
 
 == Get By Class: Get By Class Name ==
