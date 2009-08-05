@@ -2,8 +2,8 @@
 /*[desc|Create a new unique array]*/
 /*[fn|unique]*/
 
-_.unique=function(a){
-  for(var b=a.length,c=[];b--;)_.I(a[b],c)>0? //loop if not in list
+_.unique=function(a,b){
+  for(b=a.length,c=[];b--;)_.I(a[b],c)>0? //loop if not in list
     0:c.push(a[b]); //add it
   return c //return
 }
