@@ -4,9 +4,9 @@
 /*[fn|R]*/
 
 _.ready=_.R=function(f){
-  /(?!.*?ati|.*?kit)^moz|ope/i.test(navigator.userAgent)? //if happy browser
-    _.E(_.d,'DOMContentLoaded',f): //then use DOMContentLoaded
-    setTimeout(f,0) //or else, do setTimeout
+  "\v"=="v"? //if unhappy browser
+    setTimeout(f,0): //do ugly hack
+    _.E(_.d,'DOMContentLoaded',f) //or else use the nice way
 }
 
 /*[summary| Many people use Window.onLoad to execute their scripts after the page has loaded. But, there is only 1 window.onload function you can set, and it happens after the images and etc are loaded. Document onReady allows you to execute javascript immediately when the document is ready for manipulation, before images are loaded and you can use it with multiple functions.]*/
