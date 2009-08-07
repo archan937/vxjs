@@ -16,7 +16,7 @@ _.include=_.N=function(s,e){e=_.d.createElement('script');e.src=s;_.d.body.appen
 _.index=_.I=function(v,a,i){for(i=a.length;i--&&a[i]!=v;);return i}
 _.ns=_.N=function(n,p,r){p=n.split('.');r=window;for(i in p){if(!r[p[i]])r[p[i]]={};r=r[p[i]]}return r}
 _.ninja=function(){delete _;return vx}
-_.pos=_.P=function(e,a){a={l:0,t:0,w:e.offsetWidth,h:e.offsetHeight};do{a.l+=e.offsetLeft;a.t+=e.offsetTop}while(o=o.offsetParent)return a}
+_.pos=_.P=function(e,a){a={l:0,t:0,w:e.offsetWidth,h:e.offsetHeight};do{a.l+=e.offsetLeft;a.t+=e.offsetTop}while(e=e.offsetParent)return a}
 _.query=_.Q=function(j,y,x){y='';for(x in j)y+='&'+x+'='+encodeURIComponent(j[x]);return y.substr(1)}
 _.queue=_.U=function(l,n){(n=function(){eval(l.splice(0,1)[0])})();return l}
 _.ready=_.R=function(f){"\v"=="v"?setTimeout(f,0):_.E(_.d,'DOMContentLoaded',f)}
