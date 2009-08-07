@@ -170,39 +170,56 @@ _.E(_.G("postl"), "click", function(){
   alert("Left: "+pos.l);
 })
 
-_.E(_.id("autofill"), "blur", function(){
-  setTimeout(function(){
-    _.id("autofillbox").innerHTML = ""
-    _.id("autofillbox").style.display = "none"
-  },100)
-})
-_.E(_.id("autofill"), "keyup", function(){
-  var list="ajax animator,forkswif,distributed computing,javascript,internet exploder,snowcms,wikify,project wikify,untitled,mmorpg,cometrpg,vxjs,vx,templating,xdb,vxjs-plugins,vxjs-ajax,openswif,distributed-pi,subleq2,gaecomic,datastore-service,metnal-interpreter,web-wordlist,mirrortouch,xrgcsblog,shinytouch,jsvectoreditor,onlypaths,lightblog,svg-edit,svgweb,antimatter15,updates,contributor,commiter,starred,projects,developers,username,profile,google,code,favorites,terms of service,site directory,copyright,moore's law,neophyte,kurzweil,home,fat,kangaroo,animation,trail,block,following,firebug,lite,something,firebug lite,fxl,fx,templating,events,html entities,queryencoded,anti-science,dogma,knowledge,arts,art,query,ajax,government,secret code,finding,logarithm,logarithmic,mysteries,fail,nom nom nom,om nom nom nom,robots,yesterday,zoo,illuminati,cheese,light,dark,ambigram,backtrack,explosion,explode,powerful,secret,monopolies,monopoly,clever,cold fusion,duality,dichotemy,apple,investment,ddos,need,confines,gallileo,institution,distributed denial of service,dos,denial of service,disk operating system,richard feynman,question,existence,iphone,mystery,failure,ones,everything,influence,new world order,kevin,education,groups,group,famous,destroy,confidence,system,systematic,fighting,li tag,body,coherent,egyptian,modern,transistor,singularity,the singularity,the singularity is near,secret,society,political,religion,thomas jefferson,fact,wordlist,tjhsst".split(",")
-  var value =_.id("autofill").value
-  var pos = _.pos(_.id("autofill"))
-  _.id("autofillbox").style.left = pos.l + "px"
-  _.id("autofillbox").style.top = pos.t + pos.h + "px"
-  _.id("autofillbox").style.width = pos.w + "px"
-  _.id("autofillbox").innerHTML = ""
-  _.id("autofillbox").style.display = "none"
-  if(value != ""){
-    setTimeout(function(){
-      for(var i = 0; i < list.length; i++){
-        if(list[i].indexOf(value) == 0){
-          _.id("autofillbox").style.display = "block"
-          var li = _.d.createElement("li");
-          li.className = "autofillitem"
-          li.innerHTML = "<a href='#' onclick='return false'>"+list[i].replace(value, "<b>"+value+"</b>")+"</a>"
-          li.onclick = function(){
-            _.id("autofill").value = this.textContent
-          }
-          _.id("autofillbox").appendChild(li)
+function new_autofill(textbox, fillbox){
+  var list=[]
+  var last_query = -1;
+  function update_list(){
+    var value = textbox.value;
+    for(var i = 0; i < list.length; i++){
+      if(list[i].indexOf(value) == 0){
+        fillbox.style.display = "block"
+        var li = _.d.createElement("li");
+        li.className = "autofillitem"
+        li.innerHTML = "<a href='#' onclick='return false'>"+list[i].replace(value, "<b>"+value+"</b>")+"</a>"
+        li.textvalue = value;
+        li.onclick = function(){
+          textbox.value = this.textvalue
         }
+        fillbox.appendChild(li)
       }
-    }, 100)
+    }
   }
-})
+  _.E(textbox, "blur", function(){
+    setTimeout(function(){
+      fillbox.innerHTML = ""
+      fillbox.style.display = "none"
+    },100)
+  })
+  _.E(textbox, "keyup", function(){
+    var pos = _.pos(textbox)
+    fillbox.style.left = pos.l + "px"
+    fillbox.style.top = pos.t + pos.h + "px"
+    fillbox.style.width = pos.w + "px"
+    fillbox.innerHTML = ""
+    fillbox.style.display = "none"
+    if(textbox.value != ""){
+      if(textbox.value.indexOf(last_query) == 0){
+        update_list()
+        last_query = textbox.value;
+      }else{
+        //setTimeout(function(){
+        _.ajax("words.txt?query="+textbox.value, function(data){
+          list = data.split(",")
+          update_list()
+          last_query = textbox.value;
+        })
+        //}, 500)
+      }
+    }
+  })
+}
 
+new_autofill(_.id("autofill"), _.id("autofillbox"))
 
 var handler = function(){
   alert("You see this because events are working")
