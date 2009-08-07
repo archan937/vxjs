@@ -8,7 +8,7 @@ _.pos=_.P=function(e,a){
   do{
     a.l += e.offsetLeft;
     a.t += e.offsetTop
-  }while(o=o.offsetParent)return a
+  }while(e=e.offsetParent)return a
 }
 
 
