@@ -34,8 +34,7 @@
 
 <h2>Auto Fill</h2>
 <input type="text" id="autofill">
-<ul id="autofillbox" style="position:absolute">
-<li>blah</li>
+<ul id="autofillbox" style="position:absolute;margin:0;padding:0;z-index:1337;border:1px solid black;background-color:gray">
 </ul>
 
 
@@ -160,25 +159,33 @@ _.E(_.G("class2"), "click", function(){
 
 
 _.E(_.G("poswh"), "click", function(){
-  var pos = _.P(_.G("el"));
+  var pos = _.P(_.G("poswh"));
   alert("Width: "+pos.w);
-  alert("Height:"+pos.h);
+  alert("Height: "+pos.h);
 })
 
 _.E(_.G("postl"), "click", function(){
-  var pos = _.P(_.G("el"));
-  alert("Top:"+pos.t);
-  alert("Left:"+pos.l);
+  var pos = _.P(_.G("postl"));
+  alert("Top: "+pos.t);
+  alert("Left: "+pos.l);
 })
 
 
-_.E(_.id("autofill"), "keydown", function(){
-  console.log("blah")
-  _.id("autofill").value
+_.E(_.id("autofill"), "keyup", function(){
+  var list="ajax animator,forkswif,distributed computing,javascript,internet exploder,snowcms,wikify,project wikify,untitled,mmorpg,cometrpg,vxjs,vx,templating,xdb,vxjs-plugins,vxjs-ajax,openswif,distributed-pi,subleq2,gaecomic,datastore-service,metnal-interpreter,web-wordlist,mirrortouch,xrgcsblog,shinytouch,jsvectoreditor,onlypaths,lightblog,svg-edit,svgweb,antimatter15,updates,contributor,commiter,starred,projects,developers,username,profile,google,code,favorites,terms of service,site directory,copyright,home,fat,animation,block,following,firebug,lite,something,firebug lite,fxl,fx,templating,events,html entities,queryencoded,query,ajax,finding,mysteries,fail,nom nom nom,om nom nom nom,robots,yesterday,zoo,apple,iphone,kevin,wordlist,tjhsst".split(",")
+  var value =_.id("autofill").value
   var pos = _.pos(_.id("autofill"))
-  _.id("autofillbox").style.left = pos.x
-  _.id("autofillbox").style.top = pos.y  
-  _.id("autofillbox").style.width = pos.w
+  _.id("autofillbox").style.left = pos.l + "px"
+  _.id("autofillbox").style.top = pos.t + pos.h + "px"
+  _.id("autofillbox").style.width = pos.w + "px"
+  _.id("autofillbox").innerHTML = ""
+  for(var i = 0; i < list.length; i++){
+    if(list[i].indexOf(value) == 0){
+      var li = _.d.createElement("li");
+      li.innerHTML = list[i]
+      _.id("autofillbox").appendChild(li)
+    }
+  }
 })
 
 
