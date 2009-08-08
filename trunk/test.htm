@@ -35,11 +35,12 @@
 <h2>Drop-Down Menu</h2>
 <style>
   .top_menu {
-    background-color: #007fff;
+    background-color: #E0E0E0;
     margin: 0;
     padding: 0;
     width: 200px;
     height: 26px;
+    border: 1px solid black;
   }
   .top_menu ul {
     margin-top: 3px;
@@ -57,22 +58,23 @@
   }
   .top_menu ul li a {
     padding: 5px;
-    color: white;
     text-decoration: none;
+    color: black;
+    
   }
   .top_menu ul li a:hover {
-    background-color: white;
-    color: black;
+    background-color: orange;
   }
 
   .dd_menu {
-    border-bottom: 1px solid gray;
+    border: 1px solid gray;
+    border-top: none;
     margin: 0;
     overflow: hidden;
     padding: 0;
     position: absolute;
     visibility: hidden;
-    background-color: #007fff;
+    background-color: #E0E0E0;
   }
   .dd_menu li {
     color: white;
@@ -97,12 +99,12 @@
       </ul>
     </li>
   </ul>
-  <div style="clear: both" />
+  <div style="clear: both"></div>
 </div>
   
 <h2>Auto Fill</h2>
 <input type="text" id="autofill">
-<ul id="autofillbox" style="position:absolute;display:none;margin:0;padding:0;z-index:1337;border:1px solid #808080;background-color:#D3D3D3">
+<ul id="autofillbox" style="position:absolute;display:none;margin:0;padding:0;z-index:1337;border:1px solid #808080;background-color:#D3D3D3;overflow:auto;max-height:272px">
 </ul>
 
 
