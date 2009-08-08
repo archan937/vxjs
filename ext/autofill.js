@@ -1,18 +1,45 @@
-function new_autofill(textbox, fillbox, url){
+function new_autofill(textbox, fillbox, url, post, type){
   var list=[]
   var last_query = -1;
+  if(type == "multi"){
+    get_value = function(){
+      var valuesplit = textbox.value.split(",");
+      return valuesplit[valuesplit.length-1];
+    }
+    set_textbox = function(textvalue){
+      var index = textbox.value.lastIndexOf(",");
+	    textbox.value = textbox.value.substr(0,index) + (index==-1?"":",") + textvalue + ",";
+    }
+    exclude = function(test){
+      var value = get_value();
+      return test.indexOf(value) != 0 || test == value || _.index(test,textbox.value.split(",")) != -1
+    }
+  }else{
+    get_value = function(){
+      return textbox.value;
+    }
+    set_textbox = function(textvalue){
+	    textbox.value = textvalue;
+    }
+    exclude = function(test){
+      var value = get_value();
+      return test.indexOf(value) != 0 || test == value;
+    }
+  }
   function update_list(){
-    var value = textbox.value;
+    var value = get_value()
+    fillbox.innerHTML = ""
     for(var i = 0; i < list.length; i++){
-      if(list[i].indexOf(value) == 0 && list[i] != value){
+      if(!exclude(list[i])){
         fillbox.style.display = "block"
         var li = _.d.createElement("li");
         li.className = "autofillitem"
-	li.innerHTML = "<a href='javascript:void(0)'>"+list[i].replace(value, "<b>"+value+"</b>")+"</a>"
-	li.textvalue = list[i]
-	li.onmousedown = function(){
-	  textbox.value = this.textvalue
-	}
+	      li.innerHTML = "<a href='javascript:void(0)'>"+list[i].replace(value, "<b>"+value+"</b>")+"</a>"
+	      li.textvalue = list[i]
+	      li.onmousedown = function(){
+	        set_textbox(this.textvalue)
+	        setTimeout(function(){textbox.focus()},100);
+	      }
         fillbox.appendChild(li)
       }
     }
@@ -26,17 +53,23 @@ function new_autofill(textbox, fillbox, url){
     fillbox.style.display = "none"
   }
   function check_list(){
-    if(textbox.value != ""){
-      if(textbox.value.indexOf(last_query) == 0){
+    var value = get_value()
+    
+    if(value != ""){
+      if(value.indexOf(last_query) == 0){
         update_list()
-        last_query = textbox.value;
+        last_query = value;
       }else{
         //setTimeout(function(){
-        _.ajax(_.M(url, {string: textbox.value}), function(data){
-          list = data.split(",")
+        _.ajax(_.M(url, {string: value}), function(data){
+          try{
+            list = _.json(data,true)
+          }catch(err){
+            list = data.split(",")
+          }
           update_list()
-          last_query = textbox.value;
-        })
+          last_query = value;
+        },post?_.M(post, {string: value}):null)
         //}, 500)
       }
     }
