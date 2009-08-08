@@ -1,26 +1,17 @@
-
 function new_autofill(textbox, fillbox, url){
   var list=[]
   var last_query = -1;
-  var itemlimit = 10;
   function update_list(){
     var value = textbox.value;
-    var founditems = 0;
     for(var i = 0; i < list.length; i++){
       if(list[i].indexOf(value) == 0 && list[i] != value){
         fillbox.style.display = "block"
         var li = _.d.createElement("li");
         li.className = "autofillitem"
-        if(founditems++ > itemlimit){
-	  li.innerHTML = "...";
-          fillbox.appendChild(li)
-	  break;
-	}else{
-	  li.innerHTML = "<a href='javascript:void(0)'>"+list[i].replace(value, "<b>"+value+"</b>")+"</a>"
-	  li.textvalue = list[i]
-	  li.onclick = function(){
-	    textbox.value = this.textvalue
-	  }
+	li.innerHTML = "<a href='javascript:void(0)'>"+list[i].replace(value, "<b>"+value+"</b>")+"</a>"
+	li.textvalue = list[i]
+	li.onmousedown = function(){
+	  textbox.value = this.textvalue
 	}
         fillbox.appendChild(li)
       }
