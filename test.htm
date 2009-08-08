@@ -2,7 +2,7 @@
 <h1>vX Tests/Demos</h1>
 
 <h2>Ajax</h2>
-<a href="javascript:void(0)" id="ajax">Click here</a> to find out the size of the vX Javascript Library using vX Ajax.<br>
+<a href="javascript:void(0)" id="ajax">Click here</a> to find out the size of the original modules of the vX Javascript Library using vX Ajax.<br>
 <span>Size: </span><span id="vxs">Why dont you try finding out? (not this has not been updated)</span>
 
 <h2>JSON</h2>
@@ -32,6 +32,74 @@
 <a href="javascript:void(0)" id="scriptload">Click here</a> to load something<br>
 <a href="javascript:void(0)" id="scriptload2">Click here</a> to load Firebug Lite!<br>
 
+<h2>Drop-Down Menu</h2>
+<style>
+  .top_menu {
+    background-color: #007fff;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    height: 26px;
+  }
+  .top_menu ul {
+    margin-top: 3px;
+    padding-left: 0;
+    clear: both;
+    float: left;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+  }
+  .top_menu ul li {
+    display: inline;
+    float: left;
+    margin: 0;
+  }
+  .top_menu ul li a {
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+  }
+  .top_menu ul li a:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .dd_menu {
+    border-bottom: 1px solid gray;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    visibility: hidden;
+    background-color: #007fff;
+  }
+  .dd_menu li {
+    color: white;
+    display: block !important;
+    float: none !important;
+  }
+</style>
+<div class="top_menu">
+  <ul>
+    <li><a id="handle_vxjs">vXJS</a>
+      <ul class="dd_menu" id="menu_vxjs" style="z-index: 42;">
+	<li><a href="http://code.google.com/p/vxjs/wiki/vxCore">Documentation</a></li>
+	<li><a href="build.htm">Build</a></li>
+	<li><a href="test.htm">Test Cases</a></li>
+      </ul>
+    </li>
+    <li><a id="handle_docs">Docs</a>
+      <ul class="dd_menu" id="menu_docs" style="z-index: 42;">
+	<li><a href="http://code.google.com/p/vxjs/wiki/vxCore#Stringify:_JSON_Encoding">JSON</a></li>
+	<li><a href="http://code.google.com/p/vxjs/wiki/vxCore#Templates:_Templates">Templating</a></li>
+	<li><a href="http://code.google.com/p/vxjs/wiki/vxCore#Ajax:_AJAX_Query">Ajax</a></li>
+      </ul>
+    </li>
+  </ul>
+  <div style="clear: both" />
+</div>
+  
 <h2>Auto Fill</h2>
 <input type="text" id="autofill">
 <ul id="autofillbox" style="position:absolute;display:none;margin:0;padding:0;z-index:1337;border:1px solid #808080;background-color:#D3D3D3">
@@ -49,6 +117,9 @@
 <div id="fx" class="fx" style="width: 200px; height: 100px; background-color: rgb(0, 255, 0)"></div>
 
 <script type="text/javascript" src="lib/vx.all.js"></script>
+
+<script type="text/javascript" src="ext/menu.js"></script>
+<script type="text/javascript" src="ext/autofill.js"></script>
 
 <script type="text/javascript">
 
@@ -170,66 +241,12 @@ _.E(_.G("postl"), "click", function(){
   alert("Left: "+pos.l);
 })
 
-function new_autofill(textbox, fillbox){
-  var list=[]
-  var last_query = -1;
-  function update_list(){
-    var value = textbox.value;
-    for(var i = 0; i < list.length; i++){
-      if(list[i].indexOf(value) == 0){
-        fillbox.style.display = "block"
-        var li = _.d.createElement("li");
-        li.className = "autofillitem"
-        li.innerHTML = "<a href='javascript:void(0)'>"+list[i].replace(value, "<b>"+value+"</b>")+"</a>"
-	li.textvalue = list[i]
-	li.onclick = function(){
-	  textbox.value = this.textvalue
-	}
-        fillbox.appendChild(li)
-      }
-    }
-  }
-  function update_box(){
-    var pos = _.pos(textbox)
-    fillbox.style.left = pos.l + "px"
-    fillbox.style.top = pos.t + pos.h + "px"
-    fillbox.style.width = pos.w + "px"
-    fillbox.innerHTML = ""
-    fillbox.style.display = "none"
-  }
-  _.E(textbox, "blur", function(){
-    setTimeout(function(){
-      fillbox.innerHTML = ""
-      fillbox.style.display = "none"
-    },100)
-  })
-  _.E(textbox, "focus", function(){
-    update_box()
-    if(textbox.value != ""){
-      update_list()
-      last_query = textbox.value
-    }
-  })
-  _.E(textbox, "keyup", function(){
-    update_box()
-    if(textbox.value != ""){
-      if(textbox.value.indexOf(last_query) == 0){
-        update_list()
-        last_query = textbox.value;
-      }else{
-        //setTimeout(function(){
-        _.ajax("words.txt?query="+textbox.value, function(data){
-          list = data.split(",")
-          update_list()
-          last_query = textbox.value;
-        })
-        //}, 500)
-      }
-    }
-  })
-}
+new_autofill(_.id("autofill"), _.id("autofillbox"),"ext/words.txt?query={string}")
 
-new_autofill(_.id("autofill"), _.id("autofillbox"))
+_.ready(function() {
+  new_dropdown(_.G("menu_vxjs"), _.G("handle_vxjs"));
+  new_dropdown(_.G("menu_docs"), _.G("handle_docs"));
+});
 
 var handler = function(){
   alert("You see this because events are working")
