@@ -189,19 +189,29 @@ function new_autofill(textbox, fillbox){
       }
     }
   }
-  _.E(textbox, "blur", function(){
-    setTimeout(function(){
-      fillbox.innerHTML = ""
-      fillbox.style.display = "none"
-    },100)
-  })
-  _.E(textbox, "keyup", function(){
+  function update_box(){
     var pos = _.pos(textbox)
     fillbox.style.left = pos.l + "px"
     fillbox.style.top = pos.t + pos.h + "px"
     fillbox.style.width = pos.w + "px"
     fillbox.innerHTML = ""
     fillbox.style.display = "none"
+  }
+  _.E(textbox, "blur", function(){
+    setTimeout(function(){
+      fillbox.innerHTML = ""
+      fillbox.style.display = "none"
+    },100)
+  })
+  _.E(textbox, "focus", function(){
+    update_box()
+    if(textbox.value != ""){
+      update_list()
+      last_query = textbox.value
+    }
+  })
+  _.E(textbox, "keyup", function(){
+    update_box()
     if(textbox.value != ""){
       if(textbox.value.indexOf(last_query) == 0){
         update_list()
