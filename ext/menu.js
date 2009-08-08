@@ -1,18 +1,19 @@
-var dropdown_array = [];
-
-function new_dropdown(menu, trigger)
+function new_dropdown(menu, trigger, group)
 {
   if(!menu && !trigger)
     return;
   var li = _.array(menu.getElementsByTagName('li'));
-  
+  if(!group) group = "default";  
   var timeout = null;
+
+  if(!new_dropdown.global_list[group])new_dropdown.global_list[group]=[];
+  var dropdown_array = new_dropdown.global_list[group]
   
   function dclose()
   {
     menu.style.zIndex = 42
     
-    if((new Date).getTime()-dopen.lastaction < 100 || (new Date).getTime()-dclose.lastaction < 100){
+    if((new Date).getTime()-dopen.lastaction < 500 || (new Date).getTime()-dclose.lastaction < 500){
       return autoclose();
     }
     dclose.lastaction = (new Date).getTime()
@@ -32,15 +33,8 @@ function new_dropdown(menu, trigger)
       timeout = setTimeout(dclose,100);
     }
   }
-  
-  dropdown_array.push([menu, trigger, function(){dclose()}]);
-  
-  function dopen()
-  {
-    if((new Date).getTime()-dopen.lastaction < 100){
-      return autoclose();
-    }
-    dopen.lastaction = (new Date).getTime()
+
+  function close_other(){
     for(var i = 0; i < dropdown_array.length; i++)
     {
       if(dropdown_array[i][0] != menu)
@@ -48,6 +42,15 @@ function new_dropdown(menu, trigger)
         dropdown_array[i][2]();
       }
     }
+  }  
+
+  dropdown_array.push([menu, trigger, function(){dclose()}]);
+  
+  function dopen()
+  {
+    dopen.lastaction = (new Date).getTime()
+    close_other()
+    setTimeout(close_other, 200)
     clearTimeout(timeout)
     timeout = null;
     if(menu.style.visibility != 'visible')
@@ -66,8 +69,8 @@ function new_dropdown(menu, trigger)
   
   for(var i = 0; i < li.length; i++)
   {
-    _.on(menu, "mouseover", dopen);
-    _.on(menu, "mouseout", autoclose);
+    _.on(li[i], "mouseover", dopen);
+    _.on(li[i], "mouseout", autoclose);
   }
   _.on(trigger, "mouseover", dopen);
   _.on(trigger, "mouseout", autoclose);
@@ -80,3 +83,5 @@ function new_dropdown(menu, trigger)
     })
   })
 }
+
+new_dropdown.global_list = {}
