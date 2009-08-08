@@ -180,11 +180,11 @@ function new_autofill(textbox, fillbox){
         fillbox.style.display = "block"
         var li = _.d.createElement("li");
         li.className = "autofillitem"
-        li.innerHTML = "<a href='#' onclick='return false'>"+list[i].replace(value, "<b>"+value+"</b>")+"</a>"
-        li.textvalue = value;
-        li.onclick = function(){
-          textbox.value = this.textvalue
-        }
+        li.innerHTML = "<a href='javascript:void(0)'>"+list[i].replace(value, "<b>"+value+"</b>")+"</a>"
+	li.textvalue = list[i]
+	li.onclick = function(){
+	  textbox.value = this.textvalue
+	}
         fillbox.appendChild(li)
       }
     }
