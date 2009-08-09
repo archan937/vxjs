@@ -1,27 +1,28 @@
 function new_autofill(textbox, fillbox, url, post, type){
   var list=[]
   var last_query = -1;
+  
   if(type == "multi"){
-    get_value = function(){
+    var get_value = function(){
       var valuesplit = textbox.value.split(",");
       return valuesplit[valuesplit.length-1];
     }
-    set_textbox = function(textvalue){
+    var set_textbox = function(textvalue){
       var index = textbox.value.lastIndexOf(",");
 	    textbox.value = textbox.value.substr(0,index) + (index==-1?"":",") + textvalue + ",";
     }
-    exclude = function(test){
+    var exclude = function(test){
       var value = get_value();
       return test.indexOf(value) != 0 || test == value || _.index(test,textbox.value.split(",")) != -1
     }
   }else{
-    get_value = function(){
+    var get_value = function(){
       return textbox.value;
     }
-    set_textbox = function(textvalue){
+    var set_textbox = function(textvalue){
 	    textbox.value = textvalue;
     }
-    exclude = function(test){
+    var exclude = function(test){
       var value = get_value();
       return test.indexOf(value) != 0 || test == value;
     }
