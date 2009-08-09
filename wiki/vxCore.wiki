@@ -7,6 +7,7 @@ The online build system at http://vxjs.googlecode.com/svn/trunk/build.htm can be
 
 = Overview =
 The vX Javascript library is designed to be small. There are several ways to do most things. All functions have a long, human readable name and many have shortcuts that are a single uppercase letter. For example, _.ajax maps to _.X, while some are simpler to memorize than others. Everything is prefixed with the _ symbol, similar to how many other libraries prefix things with $. Everything can be alternatively accessed through the vx object as well.
+
 == Function List ==
   * [#Add_Class:_Add_Class Add Class: Add Class]
   * [#Ajax:_AJAX_Query Ajax: AJAX Query]
@@ -369,7 +370,7 @@ document = _.d
 }}}
 
 == Slide Animation: Slide Animation ==
-The query encoder builds an HTTP query string out of a Javascript object; this simple serialization scheme prepares data for sending to the server.
+It's one of those awesome animations.
 === Usage ===
 `_.slide(direction,element[, finishcallback, frames, interval]);`
   * direction: to expand or to contract
@@ -378,7 +379,20 @@ The query encoder builds an HTTP query string out of a Javascript object; this s
   * frames: number of frames in animation
   * interval: milliseconds between frames
 === Example ===
+{{{
+_.slide(1,menu,function() //slide in
+{
+  menu.style.height = ''; //reset height
+  menu.style.visibility = 'visible'; //yay for light
+},5,20)
 
+
+_.slide(0,menu,function() //slide out
+{
+  menu.style.height = ''; //hi
+  menu.style.visibility = "hidden" //scary!
+})
+}}}
 
 == Stringify: JSON Encoding ==
 The JSON encoder serializes complex objects into JSON strings suitable for AJAX queries and unserializes JSON strings into objects.
