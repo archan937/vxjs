@@ -1,13 +1,13 @@
 /*[name|Slide Animation]*/
 /*[desc|Slide Animation]*/
 /*[fn|slide]*/
-/*[dep|anim]*/
+/*[dep|anim,pos]*/
 
 _.slide = function(d,e,o,f,i,q){
-  q = e.clientHeight;
-  _.A(f?f:15,i?i:10,function(a){
-    a=(d?0:1)+(d?1:-1)*a;
-    e.style.height = (a*q)+'px';
+  q = _.P(e).h; //get the height of object
+  _.A(f?f:15,i?i:10,function(a){ //create animation
+    a=(d?0:1)+(d?1:-1)*a; //get new value by starting with 0 or 1 and adding or subtracting by the animation state
+    e.style.height = (a*q)+'px'; //set the new height
   },o)
 }
 
