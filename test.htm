@@ -103,10 +103,15 @@
 </div>
   
 <h2>Auto Fill</h2>
+Normal Autofill.<br>
 <input type="text" id="autofill">
 <ul id="autofillbox" style="position:absolute;display:none;margin:0;padding:0;z-index:1337;border:1px solid #808080;background-color:#D3D3D3;overflow:auto;max-height:272px">
 </ul>
-
+<br>
+Multi Item Autofill.<br>
+<input type="text" id="multifill" style="width:500px;">
+<ul id="multifillbox" style="position:absolute;display:none;margin:0;padding:0;z-index:1337;border:1px solid green;background-color:#7CEC00;overflow:auto;max-height:272px">
+</ul>
 
 <h2>Position</h2>
 <a href="javascript:void(0)" id="postl">Where am I?</a><br>
@@ -244,6 +249,8 @@ _.E(_.G("postl"), "click", function(){
 })
 
 new_autofill(_.id("autofill"), _.id("autofillbox"),"ext/words.txt?query={string}")
+
+new_autofill(_.id("multifill"), _.id("multifillbox"),"ext/words.txt?query={string}",null,"multi")
 
 _.ready(function() {
   new_dropdown(_.G("menu_vxjs"), _.G("handle_vxjs"));
