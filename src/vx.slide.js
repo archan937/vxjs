@@ -11,7 +11,7 @@ _.slide = function(d,e,o,f,i,q){
   },o)
 }
 
-/*[summary|The query encoder builds an HTTP query string out of a Javascript object; this simple serialization scheme prepares data for sending to the server.]*/
+/*[summary|It's one of those awesome animations.]*/
 /*[usage|
 `_.slide(direction,element[, finishcallback, frames, interval]);`
   * direction: to expand or to contract
@@ -20,4 +20,19 @@ _.slide = function(d,e,o,f,i,q){
   * frames: number of frames in animation
   * interval: milliseconds between frames
 ]*/
+/*[example|
+{{{
+_.slide(1,menu,function() //slide in
+{
+  menu.style.height = ''; //reset height
+  menu.style.visibility = 'visible'; //yay for light
+},5,20)
 
+
+_.slide(0,menu,function() //slide out
+{
+  menu.style.height = ''; //hi
+  menu.style.visibility = "hidden" //scary!
+})
+}}}
+]*/
