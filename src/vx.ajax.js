@@ -3,18 +3,11 @@
 /*[fn|X]*/
 
 _.ajax=_.X=function(u,f,d,x){
-//x=this.ActiveXObject?new ActiveXObject('Microsoft.XMLHTTP'):new XMLHttpRequest();
-  x=window.ActiveXObject; //reuse x variable
-//x=new(this.ActiveXObject?ActiveXObject:XMLHttpRequest)('Microsoft.XMLHTTP');
-  x=new(x?x:XMLHttpRequest)('Microsoft.XMLHTTP'); //if there's the MS XHR, use it, else use stnadards
-//x.open(p?'POST':'GET',u,!0);
+  x=new(window.ActiveXObject||XMLHttpRequest)('Microsoft.XMLHTTP')//if there's the MS XHR, use it, else use stnadards
   x.open(d?'POST':'GET',u,1); //switch between post and get
-  
   x.setRequestHeader('Content-type','application/x-www-form-urlencoded'); //for post.
   x.onreadystatechange = function(){
-  //x.readyState==4?f?f(x.responseText,x):f:0
-  //x.readyState==4&&f?f(x.responseText,x):f
-    x.readyState>3&&f?f(x.responseText,x):0
+    x.readyState>3&&f&&f(x.responseText,x)
   };
   x.send(d)
 }

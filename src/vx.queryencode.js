@@ -5,7 +5,7 @@
 _.query=_.Q=function(j,y,x){
   y='';
   for(x in j)y+='&'+x+'='+encodeURIComponent(j[x]);
-  return y.substr(1)
+  return y.slice(1)
 }
 
 /*[summary|The query encoder builds an HTTP query string out of a Javascript object; this simple serialization scheme prepares data for sending to the server.]*/
