@@ -1,4 +1,4 @@
-var vx=_=_||{}
+vx=_={}
 _.addclass=_.AC=function(e,c){if(_.HC(e))e.className+=' '+c}
 _.ajax=_.X=function(u,f,d,x){x=new(window.ActiveXObject||XMLHttpRequest)('Microsoft.XMLHTTP')
 x.open(d?'POST':'GET',u,1);x.setRequestHeader('Content-type','application/x-www-form-urlencoded');x.onreadystatechange=function(){x.readyState>3&&f&&f(x.responseText,x)};x.send(d)}
